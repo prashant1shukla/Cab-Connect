@@ -7,7 +7,7 @@ namespace Assigmnent_2.Validations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var password = value as string;
+            string password = value as string;
 
             // Check if password contains any special characters
             if (password.Any(char.IsPunctuation) || password.Any(char.IsSymbol))

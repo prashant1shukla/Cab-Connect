@@ -7,7 +7,7 @@ namespace Assigmnent_2.Validations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var password = value as string;
+            string password = value as string;
 
             // Check if password contains at least one uppercase letter, one lowercase letter, and one digit
             if (!password.Any(char.IsUpper) || !password.Any(char.IsLower) || !password.Any(char.IsDigit))

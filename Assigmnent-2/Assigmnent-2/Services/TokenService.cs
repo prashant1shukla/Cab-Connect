@@ -17,11 +17,14 @@ namespace Assigmnent_2.Services
             _config = configuration;
         }
 
+        //Generating the JWT Token
         public string GenerateToken(UserModel user)
         {
+            // providing the security key and credetials for token generation
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            // Taking data from appsettings.json
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
