@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Assigmnent_2.Models;
 using Assigmnent_2.Data;
 using System.Linq;
+using Assigmnent_2.Services;
 
 namespace Assigmnent_2.Controllers
 {
@@ -10,15 +11,19 @@ namespace Assigmnent_2.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly UserService _userService;
+
+        public UserController(UserService userService)
+        {
+            _userService = userService;
+        }
+
         [Authorize]
         [HttpGet("get-user")]
         public IActionResult GetUser()
         {
-            // Extract username from JWT token
             var username = User.Identity.Name;
-
-            // Find user in the list
-            var user = UserDataStore.Users.FirstOrDefault(u => u.Username == username);
+            var user = _userService.GetUserByUsername(username);
 
             if (user == null)
             {

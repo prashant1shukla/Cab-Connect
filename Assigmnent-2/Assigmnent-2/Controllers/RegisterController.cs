@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Assigmnent_2.Models;
-using Assigmnent_2.Data;
+using Assigmnent_2.Services;
 
 namespace Assigmnent_2.Controllers
 {
@@ -8,17 +8,20 @@ namespace Assigmnent_2.Controllers
     [ApiController]
     public class RegisterController : ControllerBase
     {
+        private readonly UserService _userService;
+
+        public RegisterController(UserService userService)
+        {
+            _userService = userService;
+        }
+
         [HttpPost]
         public IActionResult Register(UserModel user)
         {
-            // Check if user already exists
-            if (UserDataStore.Users.Any(u => u.Username == user.Username))
+            if (!_userService.RegisterUser(user))
             {
                 return Conflict("Username already exists");
             }
-
-            // Add user to the list
-            UserDataStore.Users.Add(user);
 
             return Ok("User registered successfully");
         }
