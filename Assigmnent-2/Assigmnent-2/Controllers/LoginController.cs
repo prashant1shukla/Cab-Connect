@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using Assigmnent_2.Models;
-using Assigmnent_2.Data;
 using Assigmnent_2.Services;
+using Assigmnent_2.CustomException;
 
 namespace Assigmnent_2.Controllers
 {
@@ -27,16 +21,23 @@ namespace Assigmnent_2.Controllers
         [HttpPost]
         public IActionResult Login(LoginModel login)
         {
-            var user = _authenticationService.AuthenticateUser(login);
-
-            if (user == null)
+            try
             {
-                return Unauthorized("Invalid username or password");
+                var user = _authenticationService.AuthenticateUser(login);
+
+                if (user == null)
+                {
+                    throw new InvalidPasswordException("Invalid username or password"); // Throw custom exception
+                }
+
+                var token = _tokenService.GenerateToken(user);
+
+                return Ok(new { token });
             }
-
-            var token = _tokenService.GenerateToken(user);
-
-            return Ok(new { token });
+            catch (InvalidPasswordException ex)
+            {
+                return Unauthorized(ex.Message);
+            }
         }
     }
 }

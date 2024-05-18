@@ -1,18 +1,12 @@
+using assignment_2.DTO;
+using assignment_2.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.DependencyInjection;
 using System.Text;
-using Assigmnent_2.Services;
-using Assigmnent_2.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<AuthenticationService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<TokenService>();
-builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
-
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -33,6 +27,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Register your services
+builder.Services.AddScoped<IRegistrationService, RegistrationService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserService, UserService>(); // Add this line
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,8 +46,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
-
 
 app.MapControllers();
 
