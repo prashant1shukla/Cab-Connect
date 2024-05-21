@@ -2,7 +2,7 @@
 {
     public class RentalByTitleAndUsernameRequestDTO
     {
-        public string Title { get; set; }
+        public string MovieTitle { get; set; }
         public string Username { get; set; }
     }
 }

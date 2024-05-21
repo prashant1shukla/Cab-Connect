@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment_3.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class RentalsController : ControllerBase
     {
         private readonly EF_DataContext _context;
@@ -52,8 +54,8 @@ namespace Assignment_3.Controllers
         }
 
         // 7. Rent a movie to a customer by giving movie title and customer username
-        [HttpPost("movies/{movieId}/customers/{username}")]
-        public IActionResult RentMovieToCustomerByTitleAndUsername(int movieId, string username)
+        [HttpPost("movies/{movieTitle}/customers/{username}")]
+        public IActionResult RentMovieToCustomerByTitleAndUsername(string movieTitle, string username)
         {
             var customer = _context.Customers.FirstOrDefault(c => c.Username == username);
             if (customer == null)
@@ -61,7 +63,7 @@ namespace Assignment_3.Controllers
                 return NotFound("Customer not found");
             }
 
-            var movie = _context.Movies.FirstOrDefault(m => m.Id == movieId);
+            var movie = _context.Movies.FirstOrDefault(m => m.Title == movieTitle);
             if (movie == null)
             {
                 return NotFound("Movie not found");
@@ -70,7 +72,7 @@ namespace Assignment_3.Controllers
             var rental = new Rental
             {
                 CustomerId = customer.Id,
-                MovieId = movieId,
+                MovieId = movie.Id,
                 RentalDate = DateTime.UtcNow
                 // Other rental properties
             };
