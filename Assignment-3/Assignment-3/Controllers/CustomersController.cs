@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment_3.Controllers
 {
+    /// <summary>
+    /// Controller for managing customers and their associated operations.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
@@ -18,7 +21,10 @@ namespace Assignment_3.Controllers
         {
             _customerService = customerService;
         }
-
+        /// <summary>
+        /// Adds a new customer.
+        /// </summary>
+        /// <param name="customerDTO">The data of the customer to be added.</param>
         [HttpPost]
         public IActionResult AddCustomer(CustomerRequestDTO customerDTO)
         {
@@ -26,6 +32,10 @@ namespace Assignment_3.Controllers
             return Ok(responseDTO);
         }
 
+        /// <summary>
+        /// Retrieves customers who have rented a specific movie.
+        /// </summary>
+        /// <param name="movieId">The ID of the movie.</param>
         [HttpGet("movies/{movieId}/customers")]
         public IActionResult GetCustomersForMovie(int movieId)
         {
@@ -37,6 +47,10 @@ namespace Assignment_3.Controllers
             return Ok(responseDTOs);
         }
 
+        /// <summary>
+        /// Retrieves movies rented by a specific customer.
+        /// </summary>
+        /// <param name="customerId">The ID of the customer.</param>
         [HttpGet("{customerId}/movies")]
         public IActionResult GetMoviesForCustomer(int customerId)
         {
@@ -48,6 +62,10 @@ namespace Assignment_3.Controllers
             return Ok(responseDTOs);
         }
 
+        /// <summary>
+        /// Calculates the total cost of movies rented by a specific customer.
+        /// </summary>
+        /// <param name="customerId">The ID of the customer.</param>
         [HttpGet("{customerId}/totalcost")]
         public IActionResult GetTotalCostForCustomer(int customerId)
         {

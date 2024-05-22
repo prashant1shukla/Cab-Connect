@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment_3.Controllers
 {
+    /// <summary>
+    /// Controller for managing movies and their associated operations.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
@@ -19,6 +22,10 @@ namespace Assignment_3.Controllers
             _movieService = movieService;
         }
 
+        /// <summary>
+        /// Adds a new movie.
+        /// </summary>
+        /// <param name="movieDTO">The data of the movie to be added.</param>
         [HttpPost]
         public IActionResult AddMovie(MovieRequestDTO movieDTO)
         {
@@ -26,6 +33,9 @@ namespace Assignment_3.Controllers
             return Ok(responseDTO);
         }
 
+        /// <summary>
+        /// Retrieves all movies.
+        /// </summary>
         [HttpGet]
         public IActionResult GetAllMovies()
         {
@@ -33,6 +43,10 @@ namespace Assignment_3.Controllers
             return Ok(responseDTOs);
         }
 
+        /// <summary>
+        /// Retrieves a movie by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the movie.</param>
         [HttpGet("{id}")]
         public IActionResult GetMovieById(int id)
         {
@@ -44,6 +58,10 @@ namespace Assignment_3.Controllers
             return Ok(responseDTO);
         }
 
+        /// <summary>
+        /// Retrieves a movie by its title.
+        /// </summary>
+        /// <param name="title">The title of the movie.</param>
         [HttpGet("title/{title}")]
         public IActionResult GetMovieByTitle(string title)
         {

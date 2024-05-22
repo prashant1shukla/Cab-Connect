@@ -7,12 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<EF_DataContext>(
-        o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
-    );
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
+);
 
-//builder.Services.AddScoped<MovieService>();
-//builder.Services.AddScoped<CustomerService>();
-//builder.Services.AddScoped<RentalService>();
 
 builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
