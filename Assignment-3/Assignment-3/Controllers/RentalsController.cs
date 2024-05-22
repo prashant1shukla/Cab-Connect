@@ -1,6 +1,7 @@
 ﻿using Assignment_3.DTO.ResponseDTO;
 using Assignment_3.Models;
 using Assignment_3.Services;
+using Assignment_3.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment_3.Controllers
@@ -9,9 +10,9 @@ namespace Assignment_3.Controllers
     [ApiController]
     public class RentalsController : ControllerBase
     {
-        private readonly RentalService _rentalService;
+        private readonly IRentalService _rentalService;
 
-        public RentalsController(RentalService rentalService)
+        public RentalsController(IRentalService rentalService)
         {
             _rentalService = rentalService;
         }

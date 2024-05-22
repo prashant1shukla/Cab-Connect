@@ -1,10 +1,11 @@
 ﻿using Assignment_3.DTO.ResponseDTO;
 using Assignment_3.DTO.RquestDTO;
 using Assignment_3.Models;
+using Assignment_3.Services.IServices;
 
 namespace Assignment_3.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly EF_DataContext _context;
 

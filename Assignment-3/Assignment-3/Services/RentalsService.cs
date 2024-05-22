@@ -1,9 +1,10 @@
 ﻿using Assignment_3.DTO.ResponseDTO;
 using Assignment_3.Models;
+using Assignment_3.Services.IServices;
 
 namespace Assignment_3.Services
 {
-    public class RentalService
+    public class RentalService : IRentalService
     {
         private readonly EF_DataContext _context;
 

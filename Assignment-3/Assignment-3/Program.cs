@@ -1,5 +1,6 @@
 using Assignment_3.Models;
 using Assignment_3.Services;
+using Assignment_3.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +10,13 @@ builder.Services.AddDbContext<EF_DataContext>(
         o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
     );
 
-builder.Services.AddScoped<MovieService>();
-builder.Services.AddScoped<CustomerService>();
-builder.Services.AddScoped<RentalService>();
+//builder.Services.AddScoped<MovieService>();
+//builder.Services.AddScoped<CustomerService>();
+//builder.Services.AddScoped<RentalService>();
+
+builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IRentalService, RentalService>();
 
 
 

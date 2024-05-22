@@ -2,6 +2,7 @@
 using Assignment_3.DTO.RquestDTO;
 using Assignment_3.Models;
 using Assignment_3.Services;
+using Assignment_3.Services.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +12,9 @@ namespace Assignment_3.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly CustomerService _customerService;
+        private readonly ICustomerService _customerService;
 
-        public CustomersController(CustomerService customerService)
+        public CustomersController(ICustomerService customerService)
         {
             _customerService = customerService;
         }

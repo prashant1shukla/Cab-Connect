@@ -2,6 +2,7 @@
 using Assignment_3.DTO.RquestDTO;
 using Assignment_3.Models;
 using Assignment_3.Services;
+using Assignment_3.Services.IServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +12,9 @@ namespace Assignment_3.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        private readonly MovieService _movieService;
+        private readonly IMovieService _movieService;
 
-        public MoviesController(MovieService movieService)
+        public MoviesController(IMovieService movieService)
         {
             _movieService = movieService;
         }
