@@ -1,4 +1,5 @@
 using Assignment_3.Models;
+using Assignment_3.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<EF_DataContext>(
         o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
     );
+
+builder.Services.AddScoped<MovieService>();
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<RentalService>();
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

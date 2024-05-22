@@ -1,6 +1,7 @@
 ﻿using Assignment_3.DTO.ResponseDTO;
 using Assignment_3.DTO.RquestDTO;
 using Assignment_3.Models;
+using Assignment_3.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,79 +11,46 @@ namespace Assignment_3.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        private readonly EF_DataContext _context;
+        private readonly MovieService _movieService;
 
-        public MoviesController(EF_DataContext context)
+        public MoviesController(MovieService movieService)
         {
-            _context = context;
+            _movieService = movieService;
         }
 
         [HttpPost]
         public IActionResult AddMovie(MovieRequestDTO movieDTO)
         {
-            var movie = new Movie
-            {
-                Title = movieDTO.Title,
-                RentalPrice = movieDTO.RentalPrice
-            };
-
-            _context.Movies.Add(movie);
-            _context.SaveChanges();
-
-            var responseDTO = new MovieResponseDTO
-            {
-                Id = movie.Id,
-                Title = movie.Title,
-                RentalPrice = movie.RentalPrice
-            };
-
+            var responseDTO = _movieService.AddMovie(movieDTO);
             return Ok(responseDTO);
         }
 
         [HttpGet]
         public IActionResult GetAllMovies()
         {
-            var movies = _context.Movies.ToList();
-            var responseDTOs = movies.Select(movie => new MovieResponseDTO
-            {
-                Id = movie.Id,
-                Title = movie.Title,
-                RentalPrice = movie.RentalPrice
-            }).ToList();
+            var responseDTOs = _movieService.GetAllMovies();
             return Ok(responseDTOs);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetMovieById(int id)
         {
-            var movie = _context.Movies.FirstOrDefault(m => m.Id == id);
-            if (movie == null)
+            var responseDTO = _movieService.GetMovieById(id);
+            if (responseDTO == null)
             {
                 return NotFound();
             }
-            var responseDTO = new MovieResponseDTO
-            {
-                Id = movie.Id,
-                Title = movie.Title,
-                RentalPrice = movie.RentalPrice
-            };
             return Ok(responseDTO);
         }
 
         [HttpGet("title/{title}")]
         public IActionResult GetMovieByTitle(string title)
         {
-            var movie = _context.Movies.FirstOrDefault(m => m.Title == title);
-            if (movie == null)
+            var responseDTO = _movieService.GetMovieByTitle(title);
+            if (responseDTO == null)
             {
                 return NotFound();
             }
-            var responseDTO = new MovieResponseDTO
-            {
-                Id = movie.Id,
-                Title = movie.Title,
-                RentalPrice = movie.RentalPrice
-            };
             return Ok(responseDTO);
         }
     }
