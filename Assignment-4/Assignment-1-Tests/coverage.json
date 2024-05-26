@@ -1,0 +1,556 @@
+{
+  "assignment-1.dll": {
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\Program.cs": {
+      "assignment_1.Program": {
+        "System.Void assignment_1.Program::Main(System.String[])": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "35": 0,
+            "36": 0,
+            "39": 0,
+            "40": 0,
+            "43": 0,
+            "46": 0,
+            "49": 0,
+            "50": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\users\\Admin.cs": {
+      "assignment_1.library.users.Admin": {
+        "System.String assignment_1.library.users.Admin::get_AdminId()": {
+          "Lines": {
+            "8": 10
+          },
+          "Branches": []
+        },
+        "System.String assignment_1.library.users.Admin::get_Role()": {
+          "Lines": {
+            "9": 10
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Admin::IssueBook(assignment_1.library.libraryManagement.LibraryManager,assignment_1.library.users.User,assignment_1.library.books.Book)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Admin::ManageInventory(assignment_1.library.libraryManagement.LibraryManager,assignment_1.library.books.Book,System.Int32)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Admin::DisplayInventoryInfo(assignment_1.library.books.Book)": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Admin::DisplayIssueeList(assignment_1.library.libraryManagement.LibraryManager,assignment_1.library.books.Book)": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Admin::.ctor(System.String,System.String,System.String,System.String)": {
+          "Lines": {
+            "11": 5,
+            "12": 5,
+            "13": 5,
+            "14": 5,
+            "15": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\users\\Student.cs": {
+      "assignment_1.library.users.Student": {
+        "System.String assignment_1.library.users.Student::get_StudentId()": {
+          "Lines": {
+            "5": 15
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Student::.ctor(System.String,System.String,System.String)": {
+          "Lines": {
+            "7": 10,
+            "8": 10,
+            "9": 10,
+            "10": 10
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\users\\Teacher.cs": {
+      "assignment_1.library.users.Teacher": {
+        "System.String assignment_1.library.users.Teacher::get_TeacherId()": {
+          "Lines": {
+            "5": 10
+          },
+          "Branches": []
+        },
+        "System.String assignment_1.library.users.Teacher::get_Department()": {
+          "Lines": {
+            "6": 10
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.Teacher::.ctor(System.String,System.String,System.String,System.String)": {
+          "Lines": {
+            "8": 5,
+            "9": 5,
+            "10": 5,
+            "11": 5,
+            "12": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\users\\User.cs": {
+      "assignment_1.library.users.User": {
+        "System.String assignment_1.library.users.User::get_UserId()": {
+          "Lines": {
+            "7": 35
+          },
+          "Branches": []
+        },
+        "System.String assignment_1.library.users.User::get_Name()": {
+          "Lines": {
+            "8": 47
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<assignment_1.library.books.Book> assignment_1.library.users.User::get_BooksIssued()": {
+          "Lines": {
+            "9": 83
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.User::IssueBook(assignment_1.library.books.Book)": {
+          "Lines": {
+            "19": 9,
+            "20": 9,
+            "21": 9
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.users.User::DisplayIssuedBooks()": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 43,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void assignment_1.library.users.User::DisplayIssuerName()": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 assignment_1.library.users.User::CalculateFine()": {
+          "Lines": {
+            "38": 6,
+            "39": 6,
+            "40": 24,
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 3,
+            "49": 6,
+            "50": 6
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 103,
+              "EndOffset": 18,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 43,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 78,
+              "EndOffset": 95,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 40,
+              "Offset": 103,
+              "EndOffset": 105,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 6
+            }
+          ]
+        },
+        "System.Void assignment_1.library.users.User::.ctor(System.String,System.String)": {
+          "Lines": {
+            "11": 20,
+            "12": 20,
+            "13": 20,
+            "14": 20,
+            "15": 20,
+            "16": 20
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\libraryManagement\\LibraryManager.cs": {
+      "assignment_1.library.libraryManagement.LibraryManager": {
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::AddUser(assignment_1.library.users.User)": {
+          "Lines": {
+            "18": 9,
+            "19": 9,
+            "20": 9
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::AddBook(assignment_1.library.books.Book)": {
+          "Lines": {
+            "23": 12,
+            "24": 12,
+            "25": 12
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::IssueBook(assignment_1.library.users.User,assignment_1.library.books.Book)": {
+          "Lines": {
+            "28": 12,
+            "29": 12,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 12,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "40": 12,
+            "41": 9,
+            "42": 9,
+            "43": 9,
+            "44": 9,
+            "45": 9,
+            "47": 3,
+            "48": 3,
+            "49": 3,
+            "50": 12
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 12
+            },
+            {
+              "Line": 29,
+              "Offset": 41,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 41,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 12
+            },
+            {
+              "Line": 34,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 73,
+              "EndOffset": 98,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 12
+            },
+            {
+              "Line": 34,
+              "Offset": 101,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 101,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 12
+            },
+            {
+              "Line": 40,
+              "Offset": 128,
+              "EndOffset": 130,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 9
+            },
+            {
+              "Line": 40,
+              "Offset": 128,
+              "EndOffset": 192,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::ReturnBook(assignment_1.library.users.User,assignment_1.library.books.Book)": {
+          "Lines": {
+            "53": 3,
+            "54": 3,
+            "55": 3,
+            "56": 3,
+            "57": 3,
+            "58": 3,
+            "59": 3,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 3
+          },
+          "Branches": [
+            {
+              "Line": 54,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 54,
+              "Offset": 15,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::DisplayUserBooks(assignment_1.library.users.User)": {
+          "Lines": {
+            "67": 0,
+            "68": 0,
+            "69": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::DisplayIssuerName(assignment_1.library.users.User)": {
+          "Lines": {
+            "72": 0,
+            "73": 0,
+            "74": 0
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::DisplayIssuees(assignment_1.library.books.Book)": {
+          "Lines": {
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 90,
+              "EndOffset": 43,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 66,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 90,
+              "EndOffset": 92,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 assignment_1.library.libraryManagement.LibraryManager::CalculateFine(assignment_1.library.users.User)": {
+          "Lines": {
+            "89": 6,
+            "90": 6,
+            "91": 6
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.libraryManagement.LibraryManager::.ctor()": {
+          "Lines": {
+            "11": 15,
+            "12": 15,
+            "13": 15,
+            "14": 15,
+            "15": 15
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Admin\\Documents\\Assignment-4-tests\\assignment-1\\library\\books\\Books.cs": {
+      "assignment_1.library.books.Book": {
+        "System.String assignment_1.library.books.Book::get_BookId()": {
+          "Lines": {
+            "5": 28
+          },
+          "Branches": []
+        },
+        "System.String assignment_1.library.books.Book::get_Title()": {
+          "Lines": {
+            "6": 40
+          },
+          "Branches": []
+        },
+        "System.String assignment_1.library.books.Book::get_Author()": {
+          "Lines": {
+            "7": 28
+          },
+          "Branches": []
+        },
+        "System.Int32 assignment_1.library.books.Book::get_CopiesAvailable()": {
+          "Lines": {
+            "8": 73
+          },
+          "Branches": []
+        },
+        "System.Void assignment_1.library.books.Book::.ctor(System.String,System.String,System.String,System.Int32)": {
+          "Lines": {
+            "10": 16,
+            "11": 16,
+            "12": 16,
+            "13": 16,
+            "14": 16,
+            "15": 16,
+            "16": 16
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
