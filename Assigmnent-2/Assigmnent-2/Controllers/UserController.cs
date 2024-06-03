@@ -4,6 +4,7 @@ using Assigmnent_2.Models;
 using Assigmnent_2.Data;
 using System.Linq;
 using Assigmnent_2.Services;
+using Assigmnent_2.Services.IServices;
 
 namespace Assigmnent_2.Controllers
 {
@@ -11,20 +12,20 @@ namespace Assigmnent_2.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public UserController(UserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }
 
-        //Applying authorisation on get request to fetch user data if valid token is put as a bearer token
+        //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
         [Authorize]
         [HttpGet("get-user")]
         public IActionResult GetUser()
         {
             var username = User.Identity.Name;
-            // Compaing the usernames using GetUserByUsername function
+            // Comparing the usernames using GetUserByUsername function
             var user = _userService.GetUserByUsername(username);
 
             //For invalid token
@@ -33,7 +34,7 @@ namespace Assigmnent_2.Controllers
                 return NotFound("User not found");
             }
 
-            // Returning the user data if valid token is passed
+            // Returning the user data if a valid token is passed
             return Ok(user);
         }
     }

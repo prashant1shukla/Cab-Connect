@@ -5,10 +5,11 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Assigmnent_2.Services.IServices;
 
 namespace Assigmnent_2.Services
 {
-    public class TokenService
+    public class TokenService : ITokenService
     {
         private readonly IConfiguration _config;
 
@@ -20,7 +21,7 @@ namespace Assigmnent_2.Services
         //Generating the JWT Token
         public string GenerateToken(UserModel user)
         {
-            // providing the security key and credetials for token generation
+            // providing the security key and credentials for token generation
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 

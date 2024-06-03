@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Assigmnent_2.Models;
 using Assigmnent_2.Services;
+using Assigmnent_2.Services.IServices;
 
 namespace Assigmnent_2.Controllers
 {
@@ -8,9 +9,9 @@ namespace Assigmnent_2.Controllers
     [ApiController]
     public class RegisterController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public RegisterController(UserService userService)
+        public RegisterController(IUserService userService)
         {
             _userService = userService;
         }
@@ -25,7 +26,7 @@ namespace Assigmnent_2.Controllers
                 return Conflict("Username already exists");
             }
 
-            //successfully returning if the regsitration is completed
+            //successfully returning if the registration is completed
             return Ok("User registered successfully");
         }
     }

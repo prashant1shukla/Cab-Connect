@@ -4,13 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 using Assigmnent_2.Services;
 using Assigmnent_2.Middleware;
+using Assigmnent_2.Services.IServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<AuthenticationService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
 
 
