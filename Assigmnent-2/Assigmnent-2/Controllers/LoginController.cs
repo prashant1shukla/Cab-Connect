@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Assigmnent_2.Models;
 using Assigmnent_2.Services;
 using Assigmnent_2.CustomException;
+using Assigmnent_2.ViewModel;
 
 
 namespace Assigmnent_2.Controllers
@@ -21,26 +21,11 @@ namespace Assigmnent_2.Controllers
 
         //A Post request to check and Login the user if the valid credentials are passed
         [HttpPost]
-        public IActionResult Login(LoginModel login)
+        public IActionResult Login(LoginViewModel login)
         {
-            try
-            {
-                var user = _authenticationService.AuthenticateUser(login);
-
-                if (user == null)
-                {
-                    // Throw custom exception
-                    throw new InvalidPasswordException("Invalid username or password"); 
-                }
-
-                //Generate the token which will be sent if valid credentials are passed
-                var token = _tokenService.GenerateToken(user);
-                return Ok(new { token });
-            }
-            catch (InvalidPasswordException ex)
-            {
-                return Unauthorized(ex.Message);
-            }
+            var user = _authenticationService.AuthenticateUser(login);
+            var token = _tokenService.GenerateToken(user);
+            return Ok(new { token }); 
         }
     }
 }
