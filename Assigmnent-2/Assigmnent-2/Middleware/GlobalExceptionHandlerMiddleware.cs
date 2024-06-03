@@ -1,4 +1,7 @@
-﻿namespace Assigmnent_2.Middleware
+﻿using Assigmnent_2.CustomException;
+using System.Security.Authentication;
+
+namespace Assigmnent_2.Middleware
 {
     public class GlobalExceptionHandlerMiddleware : IMiddleware
     {
@@ -15,12 +18,16 @@
             {
                 await next(context);
             }
+            catch (InvalidPasswordException ex)
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                context.Response.ContentType = "text/plain";
+                await context.Response.WriteAsync(ex.Message);
+            }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An unhandled exception occurred.");
-
-                // Customize the response based on the exception if needed
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync("An unexpected error occurred. Please try again later.");
             }
         }

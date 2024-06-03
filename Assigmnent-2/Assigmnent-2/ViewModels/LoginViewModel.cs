@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Assigmnent_2.Models
+namespace Assigmnent_2.ViewModel
 {
-    public class LoginModel
+    public class LoginViewModel
     {
         [Required]
         public string Username { get; set; }

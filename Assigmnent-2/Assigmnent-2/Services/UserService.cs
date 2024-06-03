@@ -8,10 +8,10 @@ namespace Assigmnent_2.Services
     {
         public bool RegisterUser(UserModel user)
         {
-
+            // Username already exists
             if (UserDataStore.Users.Any(u => u.Username == user.Username))
             {
-                return false; // Username already exists
+                return false; 
             }
 
             //If the username already doest not exsist make new registration
