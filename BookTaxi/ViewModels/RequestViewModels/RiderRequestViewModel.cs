@@ -11,7 +11,6 @@ namespace BookTaxi.ViewModels.RequestViewModels
 
         [Required]
         [EmailAddress]
-        [EmailUniquenessValidation]
         public string Email { get; set; }
 
         [Required]

@@ -3,7 +3,10 @@ using BookTaxi.Middleware;
 using BookTaxi.Models;
 using BookTaxi.Services;
 using BookTaxi.Services.IServices;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BookTaxi
 {
@@ -19,8 +22,26 @@ namespace BookTaxi
             );
 
             builder.Services.AddScoped<IRiderDetailsService, RiderDetailsService>();
+            builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<ITokenService, TokenService>();
+
 
             builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
+
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .   AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+            });
 
 
             builder.Services.AddControllers();

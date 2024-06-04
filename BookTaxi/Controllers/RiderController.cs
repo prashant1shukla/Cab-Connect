@@ -28,13 +28,6 @@ namespace BookTaxi.Controllers
         public IActionResult RegisterRider(RiderRequestViewModel riderDetails)
         {
             RiderResponseViewModel riderResponse = _riderDetailsService.AddRider(riderDetails);
-            //Checking if the username is already there or not
-            //if (!riderResponse)
-            //{
-            //    return Conflict("Email already exists");
-            //}
-
-            //successfully returning if the registration is completed
             return Ok(riderResponse);
         }
     }

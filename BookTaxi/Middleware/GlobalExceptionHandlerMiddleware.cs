@@ -23,6 +23,12 @@ namespace BookTaxi.Middleware
                 context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync(ex.Message);
             }
+            catch (InvalidPasswordException ex)
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                context.Response.ContentType = "text/plain";
+                await context.Response.WriteAsync(ex.Message);
+            }
             catch (Exception ex)
             {
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
