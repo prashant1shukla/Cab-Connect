@@ -9,5 +9,6 @@
         public string PhoneNumber { get; set; }
         public string Vehicletype { get; set; }
         public string VehicleRTONumber { get; set; }
+        public bool DriverAvailability { get; set; } = true;
     }
 }

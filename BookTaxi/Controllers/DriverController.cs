@@ -17,9 +17,9 @@ namespace BookTaxi.Controllers
         }
 
         /// <summary>
-        /// Registers a new Rider.
+        /// Registers a new Driver.
         /// </summary>
-        /// <param name="RiderResponseViewModel">The data of the Rider to be added.</param>
+        /// <param name="DriverResponseViewModel">The data of the Driver to be added.</param>
         [HttpPost("register")]
         public IActionResult RegisterDriver(DriverRequestViewModel driverDetails)
         {

@@ -2,6 +2,7 @@
 using BookTaxi.Services.IServices;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,6 +31,15 @@ namespace BookTaxi.Controllers
             RiderResponseViewModel riderResponse = _riderDetailsService.AddRider(riderDetails);
             return Ok(riderResponse);
         }
+
+        //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
+        //[Authorize]
+        //[HttpPost("request-a-ride")]
+        //public IActionResult RequestARide(RequestRideRequestViewModel rideDetails)
+        //{
+        //    var email = User.Identity.Name;
+
+        //}
 
     }
 }
