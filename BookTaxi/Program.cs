@@ -1,4 +1,10 @@
 
+using BookTaxi.Middleware;
+using BookTaxi.Models;
+using BookTaxi.Services;
+using BookTaxi.Services.IServices;
+using Microsoft.EntityFrameworkCore;
+
 namespace BookTaxi
 {
     public class Program
@@ -8,6 +14,14 @@ namespace BookTaxi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<EF_DataContext>(
+                o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
+            );
+
+            builder.Services.AddScoped<IRiderDetailsService, RiderDetailsService>();
+
+            builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,6 +40,8 @@ namespace BookTaxi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+            app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
 
 
             app.MapControllers();
