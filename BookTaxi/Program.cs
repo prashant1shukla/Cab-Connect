@@ -22,6 +22,7 @@ namespace BookTaxi
             );
 
             builder.Services.AddScoped<IRiderDetailsService, RiderDetailsService>();
+            builder.Services.AddScoped<IDriverDetailsService, DriverDetailsService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
 

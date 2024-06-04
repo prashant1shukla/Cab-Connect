@@ -29,7 +29,7 @@ namespace BookTaxi.Services
             }
             else
             {
-                var user = _context.Riders.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
+                var user = _context.Drivers.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
                 if (user == null)
                 {
                     throw new InvalidPasswordException("Invalid username or password");
