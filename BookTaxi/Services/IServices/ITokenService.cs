@@ -4,6 +4,6 @@ namespace BookTaxi.Services.IServices
 {
     public interface ITokenService
     {
-        string GenerateToken(LoginResponseViewModel user);
+        string GenerateToken(LoginResponse user);
     }
 }

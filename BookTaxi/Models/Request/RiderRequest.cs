@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookTaxi.ViewModels.RequestViewModels
 {
-    public class RiderRequestViewModel
+    public class RiderRequest
     {
         [Required]
         [NoSpecialCharactersValidation]

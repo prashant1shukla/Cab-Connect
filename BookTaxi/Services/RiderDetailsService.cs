@@ -1,9 +1,11 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Enums;
 using BookTaxi.Models;
 using BookTaxi.Services.IServices;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Extensions;
 
 namespace BookTaxi.Services
 {
@@ -15,30 +17,35 @@ namespace BookTaxi.Services
             _context = context;
         }
         // Adding a Rider to our database
-        public RiderResponseViewModel AddRider(RiderRequestViewModel riderDeatails)
+        public RiderResponse AddRider(RiderRequest riderDeatails)
         {
             // Create a new Rider entity from the ViewModel
-            var rider = new Rider
+            var rider1 = new User
             {
+                UserId= Guid.NewGuid(),
                 Name = riderDeatails.Name,
                 Email = riderDeatails.Email,
                 Password = riderDeatails.Password,
-                PhoneNumber = riderDeatails.PhoneNumber
+                PhoneNumber = riderDeatails.PhoneNumber,
+                UserRole = UserRole.Rider,
             };
-            if (_context.Riders.FirstOrDefault(u => u.Email.ToLower() == riderDeatails.Email.ToLower())!=null)
+            if (_context.Users.FirstOrDefault(u => u.Email.ToLower() == riderDeatails.Email.ToLower()) != null)
             {
                 throw new UserAlreadyExistException();
             }
+
             // Add the Rider to the context and save changes to the database
-            _context.Riders.Add(rider);
+            _context.Users.Add(rider1);
             _context.SaveChanges();
 
             // Create and return a response ViewModel with the added rider's details
-            var riderResponseViewModel = new RiderResponseViewModel
+            var riderResponseViewModel = new RiderResponse
             {
-                Name = rider.Name,
-                Email = rider.Email,
-                PhoneNumber=rider.PhoneNumber
+                UserId = rider1.UserId,
+                Name = rider1.Name,
+                Email = rider1.Email,
+                PhoneNumber = rider1.PhoneNumber,
+                UserRole = rider1.UserRole.ToString()
             };
 
             return riderResponseViewModel;

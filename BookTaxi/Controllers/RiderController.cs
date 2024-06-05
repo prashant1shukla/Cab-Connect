@@ -26,9 +26,9 @@ namespace BookTaxi.Controllers
         /// </summary>
         /// <param name="RiderResponseViewModel">The data of the Rider to be added.</param>
         [HttpPost("register")]
-        public IActionResult RegisterRider(RiderRequestViewModel riderDetails)
+        public IActionResult RegisterRider(RiderRequest riderDetails)
         {
-            RiderResponseViewModel riderResponse = _riderDetailsService.AddRider(riderDetails);
+            RiderResponse riderResponse = _riderDetailsService.AddRider(riderDetails);
             return Ok(riderResponse);
         }
 

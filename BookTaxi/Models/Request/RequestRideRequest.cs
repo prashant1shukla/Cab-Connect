@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookTaxi.ViewModels.RequestViewModels
 {
-    public class RequestRideRequestViewModel
+    public class RequestRideRequest
     {
         [Required]
         public string PickupLocation { get; set; }

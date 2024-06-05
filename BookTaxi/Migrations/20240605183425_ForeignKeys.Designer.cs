@@ -3,6 +3,7 @@ using System;
 using BookTaxi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookTaxi.Migrations
 {
     [DbContext(typeof(EF_DataContext))]
-    partial class EF_DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240605183425_ForeignKeys")]
+    partial class ForeignKeys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,43 @@ namespace BookTaxi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("BookTaxi.Models.Driver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("VehicleRTONumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Vehicletype")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Drivers");
+                });
 
             modelBuilder.Entity("BookTaxi.Models.Rating", b =>
                 {
@@ -69,7 +109,7 @@ namespace BookTaxi.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("VehicleId")
+                    b.Property<Guid>("VehcileId")
                         .HasColumnType("uuid");
 
                     b.HasKey("RideId");
@@ -77,10 +117,36 @@ namespace BookTaxi.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.HasIndex("VehicleId")
-                        .IsUnique();
-
                     b.ToTable("Rides");
+                });
+
+            modelBuilder.Entity("BookTaxi.Models.Rider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Riders");
                 });
 
             modelBuilder.Entity("BookTaxi.Models.User", b =>
@@ -119,6 +185,9 @@ namespace BookTaxi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("RideId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
@@ -133,6 +202,8 @@ namespace BookTaxi.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("VehicleId");
+
+                    b.HasIndex("RideId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -156,21 +227,23 @@ namespace BookTaxi.Migrations
                         .HasForeignKey("BookTaxi.Models.Ride", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BookTaxi.Models.Vehicle", null)
-                        .WithOne("Ride")
-                        .HasForeignKey("BookTaxi.Models.Ride", "VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("BookTaxi.Models.Vehicle", b =>
                 {
+                    b.HasOne("BookTaxi.Models.Ride", "Ride")
+                        .WithMany()
+                        .HasForeignKey("RideId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookTaxi.Models.User", null)
                         .WithOne("Vehicle")
                         .HasForeignKey("BookTaxi.Models.Vehicle", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Ride");
                 });
 
             modelBuilder.Entity("BookTaxi.Models.Ride", b =>
@@ -185,12 +258,6 @@ namespace BookTaxi.Migrations
                         .IsRequired();
 
                     b.Navigation("Vehicle")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BookTaxi.Models.Vehicle", b =>
-                {
-                    b.Navigation("Ride")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

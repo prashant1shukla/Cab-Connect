@@ -1,4 +1,5 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Enums;
 using BookTaxi.Models;
 using BookTaxi.Services.IServices;
 using BookTaxi.ViewModels.RequestViewModels;
@@ -13,37 +14,59 @@ namespace BookTaxi.Services
         {
             _context = context;
         }
-        public DriverResponseViewModel AddDriver(DriverRequestViewModel driverDeatails)
+        public DriverResponse AddDriver(DriverRequest driverDeatails)
         {
+
             // Create a new Driver entity from the ViewModel
-            var driver = new Driver
+            var driver = new User
             {
+                UserId = Guid.NewGuid(),
                 Name = driverDeatails.Name,
                 Email = driverDeatails.Email,
                 Password = driverDeatails.Password,
                 PhoneNumber = driverDeatails.PhoneNumber,
-                Vehicletype = driverDeatails.VehicleType,
-                VehicleRTONumber= driverDeatails.VehicleRTONumber,
-
+                UserRole= UserRole.Driver
             };
-            if (_context.Drivers.FirstOrDefault(u => u.Email.ToLower() == driverDeatails.Email.ToLower()) != null)
+
+            Vehicle vehicle = null;
+            if (Enum.TryParse<VehicleType>(driverDeatails.VehicleType, out VehicleType vehicleType))
+            {
+                // Create the Vehicle object with the parsed VehicleType
+                 vehicle = new Vehicle
+                {
+                    VehicleId = Guid.NewGuid(),
+                    UserId = driver.UserId,
+                    VehicleRTONumber = driverDeatails.VehicleRTONumber,
+                    VehicleType = vehicleType, // Assign the parsed enum value
+                    VehicleAvailability = VehicleAvailability.Available
+                };
+            }
+            else
+            {
+                // Handle case where driverDeatails.VehicleType is not a valid enum value
+                throw new ArgumentException("Invalid vehicle type provided.");
+            }
+
+            if (_context.Users.FirstOrDefault(u => u.Email.ToLower() == driverDeatails.Email.ToLower()) != null)
             {
                 throw new UserAlreadyExistException();
             }
             // Add the Driver to the context and save changes to the database
-            _context.Drivers.Add(driver);
+            _context.Users.Add(driver);
+            _context.Vehicles.Add(vehicle);
             _context.SaveChanges();
 
             // Create and return a response ViewModel with the added Driver's details
-            var driverResponseViewModel = new DriverResponseViewModel
+            var driverResponseViewModel = new DriverResponse
             {
+                UserId = driver.UserId,
                 Name = driver.Name,
                 Email = driver.Email,
                 PhoneNumber = driver.PhoneNumber,
-                VehicleType=driver.Vehicletype,
-                VehicleRTONumber = driver.VehicleRTONumber,
+                VehicleType=vehicle.VehicleType.ToString(),
+                VehicleRTONumber = vehicle.VehicleRTONumber,
+                UserRole= driver.UserRole.ToString()
             };
-
             return driverResponseViewModel;
 ;
         }

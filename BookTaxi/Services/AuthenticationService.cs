@@ -13,32 +13,32 @@ namespace BookTaxi.Services
         {
             _context = context;
         }
-        public LoginResponseViewModel AuthenticateUser(LoginRequestViewModel login)
+        public LoginResponse AuthenticateUser(LoginRequest login)
         {
-            if (login.UserType == "Rider")
-            {
-                var user = _context.Riders.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
+            //if (login.UserType == "Rider")
+            //{
+                var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
                 if (user == null)
                 {
                     throw new InvalidPasswordException("Invalid username or password");
                 }
-                return new LoginResponseViewModel
+                return new LoginResponse
                 {
                     Email= login.Email,
                 };
-            }
-            else
-            {
-                var user = _context.Drivers.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
-                if (user == null)
-                {
-                    throw new InvalidPasswordException("Invalid username or password");
-                }
-                return new LoginResponseViewModel
-                {
-                    Email = login.Email,
-                };
-            }
+            //}
+            //else
+            //{
+            //    var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
+            //    if (user == null)
+            //    {
+            //        throw new InvalidPasswordException("Invalid username or password");
+            //    }
+            //    return new LoginResponse
+            //    {
+            //        Email = login.Email,
+            //    };
+            //}
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BookTaxi.ViewModels.ResponseViewModels
 {
-    public class RiderResponseViewModel
+    public class LoginResponse
     {
         public string Name { get; set; }
         public string Email { get; set; }

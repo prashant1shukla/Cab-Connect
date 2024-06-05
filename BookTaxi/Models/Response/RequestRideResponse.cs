@@ -1,6 +1,6 @@
 ﻿namespace BookTaxi.ViewModels.ResponseViewModels
 {
-    public class RequestRideResponseViewModel
+    public class RequestRideResponse
     {
         public int RideId { get; set; }
         public string DriverName { get; set; }

@@ -5,6 +5,6 @@ namespace BookTaxi.Services.IServices
 {
     public interface IAuthenticationService
     {
-        LoginResponseViewModel AuthenticateUser(LoginRequestViewModel loginRequestViewModel);
+        LoginResponse AuthenticateUser(LoginRequest loginRequestViewModel);
     }
 }

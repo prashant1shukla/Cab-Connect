@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookTaxi.ViewModels.RequestViewModels
 {
-    public class LoginRequestViewModel
+    public class LoginRequest
     {
         [Required]
         public string Email { get; set; }

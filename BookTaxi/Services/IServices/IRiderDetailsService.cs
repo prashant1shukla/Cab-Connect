@@ -5,6 +5,6 @@ namespace BookTaxi.Services.IServices
 {
     public interface IRiderDetailsService
     {
-        RiderResponseViewModel AddRider(RiderRequestViewModel riderDetails);
+        RiderResponse AddRider(RiderRequest riderDetails);
     }
 }

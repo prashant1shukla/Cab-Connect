@@ -16,10 +16,13 @@ namespace BookTaxi.Models
         {
         }
         /// <summary>
-        /// Gets or sets the DbSet for Rider and Driver
+        /// Gets or sets the DbSet for Users, Vehicles, Rides and Driver
         /// </summary>
-        public DbSet<Rider> Riders { get; set; }
-        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Ride> Rides { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+
 
 
     }

@@ -1,9 +1,10 @@
-﻿using BookTaxi.Validations;
+﻿using BookTaxi.Enums;
+using BookTaxi.Validations;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookTaxi.ViewModels.RequestViewModels
 {
-    public class DriverRequestViewModel
+    public class DriverRequest
     {
         [Required]
         [NoSpecialCharactersValidation]

@@ -20,7 +20,7 @@ namespace BookTaxi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginRequestViewModel loginDeatils)
+        public IActionResult Login(LoginRequest loginDeatils)
         {
             var user = _authenticationService.AuthenticateUser(loginDeatils);
             var token = _tokenService.GenerateToken(user);

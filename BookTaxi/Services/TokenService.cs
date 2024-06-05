@@ -17,7 +17,7 @@ namespace BookTaxi.Services
         }
 
         //Generating the JWT Token
-        public string GenerateToken(LoginResponseViewModel user)
+        public string GenerateToken(LoginResponse user)
         {
             // providing the security key and credentials for token generation
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

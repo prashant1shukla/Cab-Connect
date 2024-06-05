@@ -5,6 +5,6 @@ namespace BookTaxi.Services.IServices
 {
     public interface IDriverDetailsService
     {
-        DriverResponseViewModel AddDriver(DriverRequestViewModel driverDetails);
+        DriverResponse AddDriver(DriverRequest driverDetails);
     }
 }

@@ -21,10 +21,11 @@ namespace BookTaxi.Controllers
         /// </summary>
         /// <param name="DriverResponseViewModel">The data of the Driver to be added.</param>
         [HttpPost("register")]
-        public IActionResult RegisterDriver(DriverRequestViewModel driverDetails)
+        public IActionResult RegisterDriver(DriverRequest driverDetails)
         {
-            DriverResponseViewModel driverResponse = _driverDetailsService.AddDriver(driverDetails);
+            DriverResponse driverResponse = _driverDetailsService.AddDriver(driverDetails);
             return Ok(driverResponse);
         }
     }
+
 }
