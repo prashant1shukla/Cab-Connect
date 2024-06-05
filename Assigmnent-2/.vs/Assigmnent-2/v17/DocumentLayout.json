@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\validations\\passwordcomplexityvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\validations\\passwordcomplexityvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\validations\\nospecialcharactersvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\validations\\nospecialcharactersvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\middleware\\globalexceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\middleware\\globalexceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\validations\\emailuniquenessvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\validations\\emailuniquenessvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|c:\\users\\admin\\documents\\kdu\\kdu3-dotnet\\assigmnent-2\\assigmnent-2\\data\\userdatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA69735D-F36C-4DA8-8864-E1830B229D1C}|Assigmnent-2\\Assigmnent-2.csproj|solutionrelative:assigmnent-2\\data\\userdatastore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\RegisterController.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Controllers\\RegisterController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:23:59.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\LoginController.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Controllers\\LoginController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:22:12.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PasswordComplexityValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\PasswordComplexityValidation.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Validations\\PasswordComplexityValidation.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\PasswordComplexityValidation.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Validations\\PasswordComplexityValidation.cs*",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:33:59.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NoSpecialCharactersValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\NoSpecialCharactersValidation.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Validations\\NoSpecialCharactersValidation.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\NoSpecialCharactersValidation.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Validations\\NoSpecialCharactersValidation.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:33:51.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Controllers\\UserController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:19:13.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GlobalExceptionHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "RelativeToolTip": "Assigmnent-2\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:34:34.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Models\\UserModel.cs",
+              "RelativeToolTip": "Assigmnent-2\\Models\\UserModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:28:36.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Services\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\AuthenticationService.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Services\\AuthenticationService.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:28:42.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\TokenService.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Services\\TokenService.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:29:49.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Services\\UserService.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Services\\UserService.cs*",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:31:21.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Models\\LoginModel.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Models\\LoginModel.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:28:14.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmailUniquenessValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\EmailUniquenessValidation.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Validations\\EmailUniquenessValidation.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Validations\\EmailUniquenessValidation.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Validations\\EmailUniquenessValidation.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:33:03.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserDataStore.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Data\\UserDataStore.cs",
+              "RelativeDocumentMoniker": "Assigmnent-2\\Data\\UserDataStore.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu\\kdu3-dotnet\\Assigmnent-2\\Assigmnent-2\\Data\\UserDataStore.cs*",
+              "RelativeToolTip": "Assigmnent-2\\Data\\UserDataStore.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:27:19.794Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

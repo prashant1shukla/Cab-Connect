@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Assigmnent-2.props" />
+</Project>
