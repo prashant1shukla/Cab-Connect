@@ -11,21 +11,13 @@ namespace Assigmnent_2.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly AuthenticationService _authenticationService;
-        private readonly TokenService _tokenService;
-        private IAuthenticationService object1;
-        private ITokenService object2;
+       private readonly IAuthenticationService _authenticationService;
+        private readonly ITokenService _tokenService;
 
-        public LoginController(AuthenticationService authenticationService, TokenService tokenService)
+        public LoginController(ITokenService tokenService, IAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
             _tokenService = tokenService;
-        }
-
-        public LoginController(IAuthenticationService object1, ITokenService object2)
-        {
-            this.object1 = object1;
-            this.object2 = object2;
         }
 
         //A Post request to check and Login the user if the valid credentials are passed
