@@ -25,6 +25,7 @@ namespace BookTaxi.Services
                 return new LoginResponse
                 {
                     Email= login.Email,
+                    UserType = login.UserType
                 };
             //}
             //else

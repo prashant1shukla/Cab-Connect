@@ -5,6 +5,7 @@ using BookTaxi.ViewModels.ResponseViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BookTaxi.Controllers
 {
@@ -16,9 +17,11 @@ namespace BookTaxi.Controllers
     public class RiderController : ControllerBase
     {
         private readonly IRiderDetailsService _riderDetailsService;
-        public RiderController(IRiderDetailsService riderDetailsService)
+        private readonly IRequestRideService _requestRideService;
+        public RiderController(IRiderDetailsService riderDetailsService, IRequestRideService requestRideService)
         {
             _riderDetailsService = riderDetailsService;
+            _requestRideService = requestRideService;
         }
 
         /// <summary>
@@ -32,14 +35,40 @@ namespace BookTaxi.Controllers
             return Ok(riderResponse);
         }
 
-        //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
-        //[Authorize]
-        //[HttpPost("request-a-ride")]
-        //public IActionResult RequestARide(RequestRideRequestViewModel rideDetails)
-        //{
-        //    var email = User.Identity.Name;
+        [Authorize]
+        [HttpGet("get-user")]
+        public IActionResult GetUser()
+        {
+            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var userTypeClaim = User.Claims.FirstOrDefault(c => c.Type == "UserType")?.Value;
 
-        //}
+            // Check if email claim is present
+            if (string.IsNullOrEmpty(emailClaim))
+            {
+                return NotFound("Email claim not found");
+            }
+
+            return Ok(new
+            {
+                Email = emailClaim,
+                UserType = userTypeClaim,
+            });
+        }
+
+        //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
+        [Authorize]
+        [HttpPost("request-a-ride")]
+        public IActionResult RequestARide(RequestRideRequest rideDetails)
+        {
+            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            var userTypeClaim = User.Claims.FirstOrDefault(c => c.Type == "UserType")?.Value;
+
+            var email = emailClaim != null ? emailClaim.ToString() : null;
+            var userType = userTypeClaim != null ? userTypeClaim.ToString() : null;
+
+            RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
+            return Ok(rideRespose);
+        }
 
     }
 }

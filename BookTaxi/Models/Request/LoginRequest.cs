@@ -12,5 +12,6 @@ namespace BookTaxi.ViewModels.RequestViewModels
         [Required]
         [UserTypeValidation]
         public string UserType { get; set; }
+        
     }
 }

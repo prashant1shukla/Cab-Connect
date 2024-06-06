@@ -20,7 +20,7 @@ namespace BookTaxi.Services
         public RiderResponse AddRider(RiderRequest riderDeatails)
         {
             // Create a new Rider entity from the ViewModel
-            var rider1 = new User
+            var rider = new User
             {
                 UserId= Guid.NewGuid(),
                 Name = riderDeatails.Name,
@@ -35,17 +35,17 @@ namespace BookTaxi.Services
             }
 
             // Add the Rider to the context and save changes to the database
-            _context.Users.Add(rider1);
+            _context.Users.Add(rider);
             _context.SaveChanges();
 
             // Create and return a response ViewModel with the added rider's details
             var riderResponseViewModel = new RiderResponse
             {
-                UserId = rider1.UserId,
-                Name = rider1.Name,
-                Email = rider1.Email,
-                PhoneNumber = rider1.PhoneNumber,
-                UserRole = rider1.UserRole.ToString()
+                UserId = rider.UserId,
+                Name = rider.Name,
+                Email = rider.Email,
+                PhoneNumber = rider.PhoneNumber,
+                UserRole = rider.UserRole.ToString()
             };
 
             return riderResponseViewModel;

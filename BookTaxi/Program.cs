@@ -24,6 +24,7 @@ namespace BookTaxi
             builder.Services.AddScoped<IRiderDetailsService, RiderDetailsService>();
             builder.Services.AddScoped<IDriverDetailsService, DriverDetailsService>();
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<IRequestRideService, RequestRideService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
 
 
@@ -61,6 +62,7 @@ namespace BookTaxi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 

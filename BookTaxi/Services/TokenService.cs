@@ -29,8 +29,8 @@ namespace BookTaxi.Services
                 audience: _config["Jwt:Audience"],
                 claims: new[]
                 {
-                    new Claim(ClaimTypes.Name, user.Email)
-                    // Add additional claims if needed (e.g., user roles)
+                    new Claim(ClaimTypes.Email, user.Email), // Added Email claim
+                    new Claim("UserType", user.UserType) // Add UserType claim
                 },
                 expires: DateTime.UtcNow.AddMinutes(30), // Token expires in 30 minutes
                 signingCredentials: credentials

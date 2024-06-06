@@ -3,9 +3,9 @@ using BookTaxi.ViewModels.ResponseViewModels;
 
 namespace BookTaxi.Services.IServices
 {
-    public class IRequestRideService
+    public interface IRequestRideService
     {
-        //RequestRideResponseViewModel RequestRide(RequestRideRequestViewModel rideDetails);
+        RequestRideResponse RequestRide(RequestRideRequest rideDetails, string? email, string? userType);
         
     }
 }
