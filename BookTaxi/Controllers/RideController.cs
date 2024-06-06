@@ -14,10 +14,13 @@ namespace BookTaxi.Controllers
     public class RideController : ControllerBase
     {
         private readonly IEndRideService _endRideService;
+        private readonly ICancleRideService _cancleRideService;
+        
 
-        public RideController(IEndRideService endRideService)
+        public RideController(IEndRideService endRideService, ICancleRideService cancleRideService)
         {
             _endRideService = endRideService;
+            _cancleRideService = cancleRideService;
         }
 
         [Authorize]
@@ -39,6 +42,34 @@ namespace BookTaxi.Controllers
                 return Ok("Ride Ended Sucessfully");
             }
             catch (RideNotStartedException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (RideNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [Authorize]
+        [HttpPut("cancle-ride")]
+        public IActionResult CancleRide(EndRideRequest cancleRiderDetails)
+        {
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+
+            try
+            {
+                if (emailClaim == null || userTypeClaim == null)
+                {
+                    // Handle the case where emailClaim or userTypeClaim is null
+                    return BadRequest("User information not found in claims.");
+                }
+
+                _cancleRideService.CancleRide(cancleRiderDetails, emailClaim?.ToString());
+                return Ok("Ride Cancelled Sucessfully");
+            }
+            catch (RideAlreadyStartedException ex)
             {
                 return BadRequest(ex.Message);
             }

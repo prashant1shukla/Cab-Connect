@@ -30,6 +30,7 @@ namespace BookTaxi
             builder.Services.AddScoped<ICurrentRideService, CurrentRideService>();
             builder.Services.AddScoped<IStartRideService, StartRideService>();
             builder.Services.AddScoped<IEndRideService, EndRideService>();
+            builder.Services.AddScoped<ICancleRideService, CancleRideService>();
 
 
             builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
