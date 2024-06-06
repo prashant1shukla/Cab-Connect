@@ -12,28 +12,25 @@ namespace BookTaxi.Services
     public class RequestRideService: IRequestRideService
     {
         private readonly EF_DataContext _context;
-        public RequestRideService(EF_DataContext context)
+        private readonly IDriverAvailibiltyService _driverAvailability;
+
+        public RequestRideService(EF_DataContext context, IDriverAvailibiltyService driverAvailability)
         {
             _context = context;
+            _driverAvailability = driverAvailability;
         }
         public RequestRideResponse RequestRide(RequestRideRequest rideDetails, string? email, string? userType)
         {
             //checking driver's availability
-            var vehicle = _context.Vehicles.LastOrDefault(v => v.VehicleAvailability == VehicleAvailability.Available);
-
+            var vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleAvailability == VehicleAvailability.Available && v.VehicleType == (VehicleType)Enum.Parse(typeof(VehicleType), rideDetails.TypeOfRide) && v.User.Email!=email);
             if (vehicle == null)
             {
-                throw new UserAlreadyExistException();
+                throw new NoDriverFoundException();
             }
-            var rider = _context.Users.FirstOrDefault(u=>u.Email == email);
-            
-
-            if (rider == null)
-            {
-                throw new UserAlreadyExistException();
-            }
+            var rider = _context.Users.FirstOrDefault(u=>u.Email == email && u.UserRole == UserRole.Rider);
             var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId && u.UserRole == UserRole.Driver);
 
+            _driverAvailability.UpdateVehcileToInRide(vehicle.VehicleId);
 
             var ride = new Ride
             {
@@ -57,8 +54,6 @@ namespace BookTaxi.Services
                 OTP = ride.OTP,
                 RideStatus = ride.RideStatus.ToString()
             };
-
-            
 
             return requestRideResponse;
         }

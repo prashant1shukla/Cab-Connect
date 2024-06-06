@@ -1,5 +1,9 @@
-﻿using BookTaxi.Models;
+﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Models;
+using BookTaxi.Models.Response;
+using BookTaxi.Services;
 using BookTaxi.Services.IServices;
+using BookTaxi.Utlis;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -18,10 +22,13 @@ namespace BookTaxi.Controllers
     {
         private readonly IRiderDetailsService _riderDetailsService;
         private readonly IRequestRideService _requestRideService;
-        public RiderController(IRiderDetailsService riderDetailsService, IRequestRideService requestRideService)
+        private readonly ICurrentRideService _currentRideService;
+        public RiderController(IRiderDetailsService riderDetailsService, IRequestRideService requestRideService, ICurrentRideService currentRideService)
         {
             _riderDetailsService = riderDetailsService;
             _requestRideService = requestRideService;
+            _currentRideService = currentRideService;
+
         }
 
         /// <summary>
@@ -39,15 +46,14 @@ namespace BookTaxi.Controllers
         [HttpGet("get-user")]
         public IActionResult GetUser()
         {
-            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var userTypeClaim = User.Claims.FirstOrDefault(c => c.Type == "UserType")?.Value;
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
 
             // Check if email claim is present
             if (string.IsNullOrEmpty(emailClaim))
             {
                 return NotFound("Email claim not found");
             }
-
             return Ok(new
             {
                 Email = emailClaim,
@@ -60,14 +66,45 @@ namespace BookTaxi.Controllers
         [HttpPost("request-a-ride")]
         public IActionResult RequestARide(RequestRideRequest rideDetails)
         {
-            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var userTypeClaim = User.Claims.FirstOrDefault(c => c.Type == "UserType")?.Value;
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            try
+            {
+                if (emailClaim == null || userTypeClaim == null)
+                {
+                    // Handle the case where emailClaim or userTypeClaim is null
+                    return BadRequest("User information not found in claims.");
+                }
+                RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
+                return Ok(rideRespose);
+            }
+            catch (NoDriverFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
 
-            var email = emailClaim != null ? emailClaim.ToString() : null;
-            var userType = userTypeClaim != null ? userTypeClaim.ToString() : null;
+        [Authorize]
+        [HttpGet("get-current-ride")]
+        public IActionResult GetCurrentRide()
+        {
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            try
+            {
+                if (emailClaim == null || userTypeClaim == null)
+                {
+                    // Handle the case where emailClaim or userTypeClaim is null
+                    return BadRequest("User information not found in claims.");
+                }
+                CurrentRideResponse currentRideRespose = _currentRideService.GetCurrentRide(emailClaim?.ToString(), userTypeClaim?.ToString());
+                return Ok(currentRideRespose);
+            }
+            catch (NoOngoingRideException ex)
+            {
+                return NotFound(ex.Message);
+            }
 
-            RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
-            return Ok(rideRespose);
         }
 
     }

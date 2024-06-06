@@ -29,7 +29,7 @@ namespace BookTaxi.Models
         public UserRole UserRole { get; set; }
 
         //Navigation property
-        public Vehicle Vehicle { get; set; }
-        public Ride Ride { get; set; }
+        //public Vehicle Vehicle { get; set; }
+        //public Ride Ride { get; set; }
     }
 }

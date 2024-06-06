@@ -26,6 +26,8 @@ namespace BookTaxi
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<IRequestRideService, RequestRideService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IDriverAvailibiltyService, DriverAvailibilityService>();
+            builder.Services.AddScoped<ICurrentRideService, CurrentRideService>();
 
 
             builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();

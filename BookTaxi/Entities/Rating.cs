@@ -8,10 +8,14 @@ namespace BookTaxi.Models
         [Key]
         [Required]
         public Guid RatingId { get; set; }
-        [ForeignKey("Ride")]
         [Required]
         public Guid RideId { get; set; }
         public double RiderRating { get; set; }
-        public double DriverRating { get; set; }
-    }
+        public double DriverRating {  get; set; }
+
+        [ForeignKey("RideId")]
+        public Ride Ride { get; set; }
+
+
+    } 
 }

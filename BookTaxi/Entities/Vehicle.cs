@@ -10,7 +10,6 @@ namespace BookTaxi.Models
         [Required]  
         public Guid VehicleId { get; set; }
 
-        [ForeignKey("User")]
         [Required]
         public Guid UserId { get; set; } 
 
@@ -24,6 +23,8 @@ namespace BookTaxi.Models
         public VehicleAvailability VehicleAvailability { get; set; }
 
         //Navigation property
-        public Ride Ride { get; set; }
+        [ForeignKey("UserId")]
+
+        public User User { get; set; }
     }
 }

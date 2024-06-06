@@ -9,11 +9,9 @@ namespace BookTaxi.Models
         [Key]
         public Guid RideId { get; set; }
 
-        [ForeignKey("User")]
         [Required]
         public Guid UserId { get; set; }
 
-        [ForeignKey("Vehicle")]
         [Required]
         public Guid VehicleId { get; set; }
 
@@ -30,6 +28,10 @@ namespace BookTaxi.Models
         public RideStatus RideStatus { get; set; }
 
         //Navigation property
-        public Rating Rating { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+        [ForeignKey("VehicleId")]
+        public Vehicle Vehicle { get; set; }
+        //public Rating Rating { get; set; }
     }
 }

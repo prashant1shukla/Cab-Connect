@@ -2,7 +2,6 @@
 {
     public enum RideStatus
     {
-        Requested,
         Confirmed,
         InProgress,
         Cancelled,
