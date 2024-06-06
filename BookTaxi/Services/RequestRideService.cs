@@ -40,7 +40,7 @@ namespace BookTaxi.Services
                 PickUpLocation = rideDetails.PickupLocation,
                 DropLocation = rideDetails.DropLocation,
                 OTP = new Random().Next(1000, 9999).ToString(),
-                RideStatus = RideStatus.Confirmed
+                RideStatus = RideStatus.YetToStart
             };
             _context.Rides.Add(ride);
             _context.SaveChanges();

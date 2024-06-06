@@ -1,5 +1,6 @@
 ﻿using BookTaxi.CustomExceptions;
 using BookTaxi.IServices;
+using BookTaxi.Models.Request;
 using BookTaxi.Models.Response;
 using BookTaxi.Services;
 using BookTaxi.Utlis;
@@ -18,12 +19,14 @@ namespace BookTaxi.Controllers
         private readonly IDriverDetailsService _driverDetailsService;
         private readonly IDriverAvailibiltyService _driverAvailibiltyService;
         private readonly ICurrentRideService _currentRideService;
+        private readonly IStartRideService _startRideService;
 
-        public DriverController(IDriverDetailsService driverDetailsService, IDriverAvailibiltyService driverAvailibiltyService, ICurrentRideService currentRideService)
+        public DriverController(IDriverDetailsService driverDetailsService, IDriverAvailibiltyService driverAvailibiltyService, ICurrentRideService currentRideService, IStartRideService startRideService)
         {
             _driverDetailsService = driverDetailsService;
             _driverAvailibiltyService = driverAvailibiltyService;
             _currentRideService = currentRideService;
+            _startRideService = startRideService;
         }
 
         /// <summary>
@@ -73,7 +76,28 @@ namespace BookTaxi.Controllers
             {
                 return NotFound(ex.Message);
             }
+        }
 
+        [Authorize]
+        [HttpPost("start-ride")]
+        public IActionResult StartRide(StartRideRequest startRideDetails)
+        {
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            try
+            {
+                if (emailClaim == null || userTypeClaim == null)
+                {
+                    // Handle the case where emailClaim or userTypeClaim is null
+                    return BadRequest("User information not found in claims.");
+                }
+                _startRideService.StartRide(startRideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
+                return Ok("Ride Started");
+            }
+            catch (CanNotStartRideException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 

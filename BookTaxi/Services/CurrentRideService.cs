@@ -34,7 +34,7 @@ namespace BookTaxi.Services
             {
                 throw new NoOngoingRideException();
             }
-            else if(ride.RideStatus==RideStatus.Confirmed)
+            else if(ride.RideStatus==RideStatus.YetToStart)
             {
                 return new CurrentRideResponse
                 {
