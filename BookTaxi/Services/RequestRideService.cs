@@ -5,7 +5,7 @@ using BookTaxi.Enums;
 using BookTaxi.CustomExceptions;
 using System.ComponentModel.DataAnnotations;
 using System;
-using BookTaxi.Services.IServices;
+using BookTaxi.IServices;
 
 namespace BookTaxi.Services
 {

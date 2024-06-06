@@ -1,8 +1,8 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.IServices;
 using BookTaxi.Models;
 using BookTaxi.Models.Response;
 using BookTaxi.Services;
-using BookTaxi.Services.IServices;
 using BookTaxi.Utlis;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
@@ -85,7 +85,7 @@ namespace BookTaxi.Controllers
         }
 
         [Authorize]
-        [HttpGet("get-current-ride")]
+        [HttpGet("get-rider-current-ride")]
         public IActionResult GetCurrentRide()
         {
             var emailClaim = UserUtils.GetUserEmailClaim(User);

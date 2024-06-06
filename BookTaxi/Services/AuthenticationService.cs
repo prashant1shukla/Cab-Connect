@@ -1,6 +1,6 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.IServices;
 using BookTaxi.Models;
-using BookTaxi.Services.IServices;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
 

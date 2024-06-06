@@ -1,6 +1,6 @@
 ﻿using BookTaxi.Models.Response;
 
-namespace BookTaxi.Services.IServices
+namespace BookTaxi.IServices
 {
     public interface IDriverAvailibiltyService
     {

@@ -1,8 +1,8 @@
 
+using BookTaxi.IServices;
 using BookTaxi.Middleware;
 using BookTaxi.Models;
 using BookTaxi.Services;
-using BookTaxi.Services.IServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

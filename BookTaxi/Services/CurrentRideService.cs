@@ -1,8 +1,8 @@
 ﻿using BookTaxi.Models;
 using BookTaxi.Models.Response;
-using BookTaxi.Services.IServices;
 using BookTaxi.CustomExceptions;
 using BookTaxi.Enums;
+using BookTaxi.IServices;
 
 
 namespace BookTaxi.Services
@@ -57,6 +57,35 @@ namespace BookTaxi.Services
                     rideStatus = ride.RideStatus.ToString()
                 };
             }
+        }
+
+        public DriverCurrentRideResponse GetDriverCurrentRide(string email, string userType)
+        {
+            // Convert userType string to UserRole enum
+            if (!Enum.TryParse<UserRole>(userType, out UserRole userRole))
+            {
+                // Handle invalid userType
+                throw new ArgumentException("Invalid user type.", nameof(userType));
+            }
+
+
+            var ride = _context.Rides.FirstOrDefault(r => r.Vehicle.User.Email == email && r.Vehicle.User.UserRole==userRole && r.Vehicle.VehicleAvailability==VehicleAvailability.RideInProgress);
+            if (ride == null)
+            {
+                throw new NoOngoingRideException();
+            }
+            var rider = _context.Users.FirstOrDefault(v => v.UserId == ride.UserId);
+
+
+                return new DriverCurrentRideResponse
+                {
+                    RiderName=rider.Name, 
+                    RiderPhoneNumber=rider.PhoneNumber,
+                    PickupLocation=ride.PickUpLocation,
+                    DropLocation=ride.DropLocation,
+                    RideStatus=ride.RideStatus.ToString()
+                };
+            
 
         }
     }

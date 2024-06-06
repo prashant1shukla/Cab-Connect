@@ -1,10 +1,11 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.IServices;
 using BookTaxi.Models.Response;
 using BookTaxi.Services;
-using BookTaxi.Services.IServices;
 using BookTaxi.Utlis;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +17,13 @@ namespace BookTaxi.Controllers
     {
         private readonly IDriverDetailsService _driverDetailsService;
         private readonly IDriverAvailibiltyService _driverAvailibiltyService;
+        private readonly ICurrentRideService _currentRideService;
 
-        public DriverController(IDriverDetailsService driverDetailsService, IDriverAvailibiltyService driverAvailibiltyService)
+        public DriverController(IDriverDetailsService driverDetailsService, IDriverAvailibiltyService driverAvailibiltyService, ICurrentRideService currentRideService)
         {
             _driverDetailsService = driverDetailsService;
             _driverAvailibiltyService = driverAvailibiltyService;
+            _currentRideService = currentRideService;
         }
 
         /// <summary>
@@ -48,6 +51,29 @@ namespace BookTaxi.Controllers
 
             DriverAvailabiltyResponse driverAvailabiltyResponse = _driverAvailibiltyService.ToggleAvailibility(emailClaim?.ToString());
             return Ok(driverAvailabiltyResponse);   
+        }
+
+        [Authorize]
+        [HttpGet("get-driver-current-ride")]
+        public IActionResult GetDriverCurrentRide()
+        {
+            var emailClaim = UserUtils.GetUserEmailClaim(User);
+            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            try
+            {
+                if (emailClaim == null || userTypeClaim == null)
+                {
+                    // Handle the case where emailClaim or userTypeClaim is null
+                    return BadRequest("User information not found in claims.");
+                }
+                DriverCurrentRideResponse currentRideRespose = _currentRideService.GetDriverCurrentRide(emailClaim?.ToString(), userTypeClaim?.ToString());
+                return Ok(currentRideRespose);
+            }
+            catch (NoOngoingRideException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
         }
     }
 

@@ -1,6 +1,6 @@
 ﻿using BookTaxi.ViewModels.ResponseViewModels;
 
-namespace BookTaxi.Services.IServices
+namespace BookTaxi.IServices
 {
     public interface ITokenService
     {
