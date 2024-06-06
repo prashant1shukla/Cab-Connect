@@ -29,6 +29,7 @@ namespace BookTaxi
             builder.Services.AddScoped<IDriverAvailibiltyService, DriverAvailibilityService>();
             builder.Services.AddScoped<ICurrentRideService, CurrentRideService>();
             builder.Services.AddScoped<IStartRideService, StartRideService>();
+            builder.Services.AddScoped<IEndRideService, EndRideService>();
 
 
             builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();

@@ -23,10 +23,7 @@ namespace BookTaxi.Services
             }
 
             var ride = _context.Rides.FirstOrDefault(r =>r.RideId==startRideDetails.RideId && r.OTP==startRideDetails.OTP && r.RideStatus==RideStatus.YetToStart);
-            if (ride==null)
-            {
-                Console.WriteLine("Ride is null");
-            }
+            
             var driver = _context.Users.FirstOrDefault(v => v.Email == email && v.UserRole == userRole);
             var vehicle = _context.Vehicles.FirstOrDefault(v => v.UserId == driver.UserId);
             if (ride == null || driver==null || vehicle==null || vehicle.VehicleId!=ride.VehicleId)
