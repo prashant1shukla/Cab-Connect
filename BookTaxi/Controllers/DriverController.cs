@@ -32,47 +32,67 @@ namespace BookTaxi.Controllers
         /// <summary>
         /// Registers a new Driver.
         /// </summary>
-        /// <param name="DriverResponseViewModel">The data of the Driver to be added.</param>
+        /// <param name="DriverResponse">The data of the Driver that is added.</param>
         [HttpPost("register")]
         public IActionResult RegisterDriver(DriverRequest driverDetails)
         {
-            DriverResponse driverResponse = _driverDetailsService.AddDriver(driverDetails);
-            return Ok(driverResponse);
+            try
+            {
+                DriverResponse driverResponse = _driverDetailsService.AddDriver(driverDetails);
+                return Ok(driverResponse);
+            }
+            catch(UserAlreadyExistException ex)
+            {
+                return Conflict(ex.Message);
+            } 
         }
 
+        /// <summary>
+        /// Changes the availability of a Driver to unavilable and available if they are not in a Ride.
+        /// </summary>
         [HttpPut("toggle-availability")]
         public IActionResult ToggleAvailibility()
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
-           
-            if (emailClaim == null || userTypeClaim == null)
-            {
-                // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
-            }
-
-            DriverAvailabiltyResponse driverAvailabiltyResponse = _driverAvailibiltyService.ToggleAvailibility(emailClaim?.ToString());
-            return Ok(driverAvailabiltyResponse);   
-        }
-
-        [Authorize]
-        [HttpGet("get-driver-current-ride")]
-        public IActionResult GetDriverCurrentRide()
-        {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
 
             try
             {
-                
-                DriverCurrentRideResponse currentRideRespose = _currentRideService.GetDriverCurrentRide(emailClaim.ToString(), userTypeClaim.ToString());
+                DriverAvailabiltyResponse driverAvailabiltyResponse = _driverAvailibiltyService.ToggleAvailibility(emailClaim);
+                return Ok(driverAvailabiltyResponse);
+            }
+            catch(DriverInRideExcpetion ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Gets the data of the Driver's current ride.
+        /// </summary>
+        /// <param name="DriverCurrentRideResponse">The data of the Driver's current ride like Rider's detail and locations</param>
+        [Authorize]
+        [HttpGet("get-driver-current-ride")]
+        public IActionResult GetDriverCurrentRide()
+        {
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return Unauthorized("User information not found in claims.");
+            }
+
+            try
+            {
+                DriverCurrentRideResponse currentRideRespose = _currentRideService.GetDriverCurrentRide(emailClaim, userTypeClaim);
                 return Ok(currentRideRespose);
             }
             catch (NoOngoingRideException ex)
@@ -81,20 +101,24 @@ namespace BookTaxi.Controllers
             }
         }
 
+        /// <summary>
+        /// Start the ride after macthing the right credentials for the ride.
+        /// </summary>
         [Authorize]
         [HttpPost("start-ride")]
         public IActionResult StartRide(StartRideRequest startRideDetails)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
             try
             {
-                _startRideService.StartRide(startRideDetails, emailClaim.ToString(), userTypeClaim.ToString());
+                _startRideService.StartRide(startRideDetails, emailClaim, userTypeClaim);
                 return Ok("Ride Started");
             }
             catch (CanNotStartRideException ex)

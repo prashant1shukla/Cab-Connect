@@ -24,11 +24,9 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-
             var ride = _context.Rides.FirstOrDefault(r => r.User.Email == email && r.User.UserRole == userRole);
             var vehicle = _context.Vehicles.FirstOrDefault(v=>v.VehicleId==ride.VehicleId);
             var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
-
 
             if (ride == null)
             {
@@ -68,7 +66,6 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-
             var ride = _context.Rides.FirstOrDefault(r => r.Vehicle.User.Email == email && r.Vehicle.User.UserRole==userRole && r.Vehicle.VehicleAvailability==VehicleAvailability.RideInProgress);
             if (ride == null)
             {
@@ -76,17 +73,14 @@ namespace BookTaxi.Services
             }
             var rider = _context.Users.FirstOrDefault(v => v.UserId == ride.UserId);
 
-
-                return new DriverCurrentRideResponse
-                {
-                    RiderName=rider.Name, 
-                    RiderPhoneNumber=rider.PhoneNumber,
-                    PickupLocation=ride.PickUpLocation,
-                    DropLocation=ride.DropLocation,
-                    RideStatus=ride.RideStatus.ToString()
-                };
-            
-
+            return new DriverCurrentRideResponse
+            {
+                RiderName=rider.Name, 
+                RiderPhoneNumber=rider.PhoneNumber,
+                PickupLocation=ride.PickUpLocation,
+                DropLocation=ride.DropLocation,
+                RideStatus=ride.RideStatus.ToString()
+            };
         }
     }
 }

@@ -13,9 +13,6 @@ using System.Security.Claims;
 
 namespace BookTaxi.Controllers
 {
-    /// <summary>
-    /// Controller for signing-up and login of riders.
-    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class RiderController : ControllerBase
@@ -28,37 +25,47 @@ namespace BookTaxi.Controllers
             _riderDetailsService = riderDetailsService;
             _requestRideService = requestRideService;
             _currentRideService = currentRideService;
-
         }
 
         /// <summary>
         /// Registers a new Rider.
         /// </summary>
-        /// <param name="RiderResponseViewModel">The data of the Rider to be added.</param>
+        /// <param name="RiderResponse">The data of the Rider that is added.</param>
         [HttpPost("register")]
         public IActionResult RegisterRider(RiderRequest riderDetails)
         {
-            RiderResponse riderResponse = _riderDetailsService.AddRider(riderDetails);
-            return Ok(riderResponse);
+            try
+            {
+                RiderResponse riderResponse = _riderDetailsService.AddRider(riderDetails);
+                return Ok(riderResponse);
+            }
+            catch(UserAlreadyExistException ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
 
+        /// <summary>
+        /// Requests for a ride
+        /// </summary>
+        /// <param name="RiderResponse">The data of the Ride that is confirmed.</param>
         //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
         [Authorize]
         [HttpPost("request-a-ride")]
         public IActionResult RequestARide(RequestRideRequest rideDetails)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
 
             try
             {
-                RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim.ToString(), userTypeClaim.ToString());
+                RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim, userTypeClaim);
                 return Ok(rideRespose);
             }
             catch (NoDriverFoundException ex)
@@ -67,23 +74,26 @@ namespace BookTaxi.Controllers
             }
         }
 
+        /// <summary>
+        /// Gets the data of the Rider's current ride.
+        /// </summary>
+        /// <param name="CurrentRideResponse">The data of the Rider's current ride like Driver's detail and OTP</param>
         [Authorize]
         [HttpGet("get-rider-current-ride")]
         public IActionResult GetCurrentRide()
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
 
             try
             {
-                
-                CurrentRideResponse currentRideRespose = _currentRideService.GetCurrentRide(emailClaim.ToString(), userTypeClaim.ToString());
+                CurrentRideResponse currentRideRespose = _currentRideService.GetCurrentRide(emailClaim, userTypeClaim);
                 return Ok(currentRideRespose);
             }
             catch (NoOngoingRideException ex)

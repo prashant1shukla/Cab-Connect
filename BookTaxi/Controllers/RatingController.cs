@@ -19,17 +19,20 @@ namespace BookTaxi.Controllers
             _ratingService = ratingService;
         }
 
+        /// <summary>
+        /// Rider rates the Driver.
+        /// </summary>
         [Authorize]
         [HttpPost("rider-rating")]
         public IActionResult RiderRating(RatingRequest rating)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
 
             try
@@ -47,18 +50,20 @@ namespace BookTaxi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Driver rates the Rider. 
+        /// </summary>
         [Authorize]
         [HttpPost("driver-rating")]
         public IActionResult DriverRating(RatingRequest rating)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             if (emailClaim == null || userTypeClaim == null)
             {
                 // Handle the case where emailClaim or userTypeClaim is null
-                return BadRequest("User information not found in claims.");
+                return Unauthorized("User information not found in claims.");
             }
 
             try
@@ -75,7 +80,5 @@ namespace BookTaxi.Controllers
                 return NotFound(ex.Message);
             }
         }
-
-
     }
 }

@@ -16,29 +16,30 @@ namespace BookTaxi.Controllers
         private readonly IEndRideService _endRideService;
         private readonly ICancleRideService _cancleRideService;
         
-
         public RideController(IEndRideService endRideService, ICancleRideService cancleRideService)
         {
             _endRideService = endRideService;
             _cancleRideService = cancleRideService;
         }
 
+        /// <summary>
+        /// End the Ride.
+        /// </summary>
         [Authorize]
         [HttpPut("end-ride")]
         public IActionResult EndRide(EndRideRequest endRideDetails)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return Unauthorized("User information not found in claims.");
+            }
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-
-                _endRideService.EndRide(endRideDetails, emailClaim?.ToString());
+                _endRideService.EndRide(endRideDetails, emailClaim);
                 return Ok("Ride Ended Sucessfully");
             }
             catch (RideNotStartedException ex)
@@ -51,22 +52,25 @@ namespace BookTaxi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cancels a the Ride.
+        /// </summary>
         [Authorize]
         [HttpPut("cancle-ride")]
         public IActionResult CancleRide(EndRideRequest cancleRiderDetails)
         {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            string? emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            string? userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return Unauthorized("User information not found in claims.");
+            }
 
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-
-                _cancleRideService.CancleRide(cancleRiderDetails, emailClaim?.ToString());
+                _cancleRideService.CancleRide(cancleRiderDetails, emailClaim);
                 return Ok("Ride Cancelled Sucessfully");
             }
             catch (RideAlreadyStartedException ex)
