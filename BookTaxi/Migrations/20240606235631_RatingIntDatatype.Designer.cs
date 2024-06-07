@@ -3,6 +3,7 @@ using System;
 using BookTaxi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookTaxi.Migrations
 {
     [DbContext(typeof(EF_DataContext))]
-    partial class EF_DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240606235631_RatingIntDatatype")]
+    partial class RatingIntDatatype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,14 +31,14 @@ namespace BookTaxi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("RatedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Ratings")
+                    b.Property<int>("DriverRating")
                         .HasColumnType("integer");
 
                     b.Property<Guid>("RideId")
                         .HasColumnType("uuid");
+
+                    b.Property<int>("RiderRating")
+                        .HasColumnType("integer");
 
                     b.HasKey("RatingId");
 

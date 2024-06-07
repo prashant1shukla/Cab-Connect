@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BookTaxi.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookTaxi.Models
@@ -10,8 +11,8 @@ namespace BookTaxi.Models
         public Guid RatingId { get; set; }
         [Required]
         public Guid RideId { get; set; }
-        public double RiderRating { get; set; }
-        public double DriverRating {  get; set; }
+        public UserRole RatedBy { get; set; }
+        public int Ratings {  get; set; }
 
         [ForeignKey("RideId")]
         public Ride Ride { get; set; }
