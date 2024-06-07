@@ -1,8 +1,8 @@
-﻿using BookTaxi.Models;
-using BookTaxi.Models.Response;
+﻿using BookTaxi.Models.Response;
 using BookTaxi.CustomExceptions;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
+using BookTaxi.Data;
 
 
 namespace BookTaxi.Services

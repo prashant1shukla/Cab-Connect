@@ -4,7 +4,7 @@ namespace BookTaxi.Validations
 {
     public class VehicleTypeValidation : ValidationAttribute
     {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             string[] validVehicles = new string[] { "Bike", "Car", "Auto" };
 

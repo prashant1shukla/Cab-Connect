@@ -42,25 +42,6 @@ namespace BookTaxi.Controllers
             return Ok(riderResponse);
         }
 
-        [Authorize]
-        [HttpGet("get-user")]
-        public IActionResult GetUser()
-        {
-            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
-            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
-
-            // Check if email claim is present
-            if (string.IsNullOrEmpty(emailClaim))
-            {
-                return NotFound("Email claim not found");
-            }
-            return Ok(new
-            {
-                Email = emailClaim,
-                UserType = userTypeClaim,
-            });
-        }
-
         //Applying authorization on get request to fetch user data if a valid token is put as a bearer token
         [Authorize]
         [HttpPost("request-a-ride")]
@@ -77,7 +58,6 @@ namespace BookTaxi.Controllers
 
             try
             {
-               
                 RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim.ToString(), userTypeClaim.ToString());
                 return Ok(rideRespose);
             }

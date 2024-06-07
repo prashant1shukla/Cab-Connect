@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookTaxi.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace BookTaxi.Models
+namespace BookTaxi.Data
 {
     /// <summary>
     /// Represents the Entity Framework data context for the application.

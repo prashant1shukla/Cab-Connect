@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System;
 using BookTaxi.IServices;
 using BookTaxi.Utlis;
+using BookTaxi.Data;
 
 namespace BookTaxi.Services
 {

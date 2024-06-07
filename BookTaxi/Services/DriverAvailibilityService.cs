@@ -1,7 +1,7 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Data;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
-using BookTaxi.Models;
 using BookTaxi.Models.Response;
 using BookTaxi.ViewModels.ResponseViewModels;
 

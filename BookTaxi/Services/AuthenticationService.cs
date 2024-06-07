@@ -1,6 +1,6 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Data;
 using BookTaxi.IServices;
-using BookTaxi.Models;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
 
@@ -25,7 +25,6 @@ namespace BookTaxi.Services
                     Email= login.Email,
                     UserType = login.UserType
                 };
-            
         }
     }
 }

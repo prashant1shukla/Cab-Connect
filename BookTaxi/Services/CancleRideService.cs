@@ -1,7 +1,7 @@
 ﻿using BookTaxi.CustomExceptions;
+using BookTaxi.Data;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
-using BookTaxi.Models;
 using BookTaxi.Models.Request;
 
 namespace BookTaxi.Services
@@ -16,8 +16,8 @@ namespace BookTaxi.Services
 
         public void CancleRide(EndRideRequest cancleRideDetails, string email)
         {
-            var ride1 = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.InProgress);
-            if (ride1 != null)
+            var rideInProgess = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.InProgress);
+            if (rideInProgess != null)
             {
                 throw new RideAlreadyStartedException();
             }
