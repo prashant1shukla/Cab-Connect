@@ -4,14 +4,23 @@ namespace BookTaxi.Validations
 {
     public class NoSpecialCharactersValidation : ValidationAttribute
     {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-            string password = value as string;
-
-            // Check if password contains any special characters
-            if (password.Any(char.IsPunctuation) || password.Any(char.IsSymbol))
+            if (value == null)
             {
-                return new ValidationResult("Password cannot contain special characters");
+                return ValidationResult.Success; 
+            }
+
+            string name = value.ToString();
+            if (name == null)
+            {
+                return new ValidationResult("Name cannot contain special characters");
+            }
+
+            // Check if name contains any special characters
+            if (name.Any(char.IsPunctuation) || name.Any(char.IsSymbol))
+            {
+                return new ValidationResult("Name cannot contain special characters");
             }
 
             return ValidationResult.Success;

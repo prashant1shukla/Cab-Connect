@@ -5,7 +5,6 @@ namespace BookTaxi.IServices
 {
     public interface IRequestRideService
     {
-        RequestRideResponse RequestRide(RequestRideRequest rideDetails, string? email, string? userType);
-
+        RequestRideResponse RequestRide(RequestRideRequest rideDetails, string email, string userType);
     }
 }

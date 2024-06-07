@@ -6,6 +6,5 @@ namespace BookTaxi.IServices
     {
         public CurrentRideResponse GetCurrentRide(string email, string userType);
         public DriverCurrentRideResponse GetDriverCurrentRide(string email, string userType);
-
     }
 }
