@@ -11,7 +11,7 @@ namespace BookTaxi.Validations
                 return new ValidationResult("Password must contain at least one uppercase letter, one lowercase letter, and one digit");
             }
 
-            string password = value.ToString();
+            string? password = value.ToString();
             if (password == null)
             {
                 return new ValidationResult("Password must contain at least one uppercase letter, one lowercase letter, and one digit");

@@ -33,7 +33,15 @@ namespace BookTaxi.Services
                 throw new RideNotFoundException();
             }
             User? rider = _context.Users.FirstOrDefault(u => u.UserId == ride.UserId);
+            if (rider == null)
+            {
+                throw new RideNotFoundException();
+            }
             User? driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
+            if (driver == null)
+            {
+                throw new RideNotFoundException();
+            }
             if (!(rider.Email == email || driver.Email == email))
             {
                 throw new RideNotFoundException();

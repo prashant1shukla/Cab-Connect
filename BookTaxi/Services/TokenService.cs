@@ -16,7 +16,9 @@ namespace BookTaxi.Services
             _config = configuration;
         }
 
-        //Generating the JWT Token
+        /// <summary>
+        /// Generates the JWT token
+        /// </summary>
         public string GenerateToken(LoginResponse user)
         {
             // providing the security key and credentials for token generation

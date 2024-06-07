@@ -11,7 +11,7 @@ namespace BookTaxi.Validations
                 return ValidationResult.Success; 
             }
 
-            string name = value.ToString();
+            string? name = value.ToString();
             if (name == null)
             {
                 return new ValidationResult("Name cannot contain special characters");

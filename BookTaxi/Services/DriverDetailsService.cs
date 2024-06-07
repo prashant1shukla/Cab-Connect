@@ -15,6 +15,11 @@ namespace BookTaxi.Services
         {
             _context = context;
         }
+
+        /// <summary>
+        /// Add the Driver to database
+        /// </summary>
+        /// <param name="DriverResponse">Riders ride's information</param>
         public DriverResponse AddDriver(DriverRequest driverDeatails)
         {
 

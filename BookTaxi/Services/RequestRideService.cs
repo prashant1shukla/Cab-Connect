@@ -21,7 +21,7 @@ namespace BookTaxi.Services
             _context = context;
             _driverAvailability = driverAvailability;
         }
-        public RequestRideResponse RequestRide(RequestRideRequest rideDetails, string? email, string? userType)
+        public RequestRideResponse RequestRide(RequestRideRequest rideDetails, string email, string userType)
         {
             //checking driver's availability
             Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleAvailability == VehicleAvailability.Available && v.VehicleType == (VehicleType)Enum.Parse(typeof(VehicleType), rideDetails.TypeOfRide) && v.User.Email!=email);
