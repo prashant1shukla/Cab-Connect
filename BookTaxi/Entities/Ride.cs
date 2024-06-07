@@ -27,11 +27,9 @@ namespace BookTaxi.Models
         [Required]
         public RideStatus RideStatus { get; set; }
 
-        //Navigation property
         [ForeignKey("UserId")]
         public User User { get; set; }
         [ForeignKey("VehicleId")]
         public Vehicle Vehicle { get; set; }
-        //public Rating Rating { get; set; }
     }
 }

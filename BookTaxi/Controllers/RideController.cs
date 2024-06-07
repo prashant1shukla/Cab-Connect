@@ -27,8 +27,8 @@ namespace BookTaxi.Controllers
         [HttpPut("end-ride")]
         public IActionResult EndRide(EndRideRequest endRideDetails)
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             try
             {
@@ -55,8 +55,8 @@ namespace BookTaxi.Controllers
         [HttpPut("cancle-ride")]
         public IActionResult CancleRide(EndRideRequest cancleRiderDetails)
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             try
             {

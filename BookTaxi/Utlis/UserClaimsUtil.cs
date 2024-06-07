@@ -2,7 +2,7 @@
 
 namespace BookTaxi.Utlis
 {
-    public class UserUtils
+    public class UserClaimsUtil
     {
         public static string? GetUserEmailClaim(ClaimsPrincipal user)
         {

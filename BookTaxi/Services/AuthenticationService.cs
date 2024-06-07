@@ -14,9 +14,7 @@ namespace BookTaxi.Services
             _context = context;
         }
         public LoginResponse AuthenticateUser(LoginRequest login)
-        {
-            //if (login.UserType == "Rider")
-            //{
+        { 
                 var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
                 if (user == null)
                 {
@@ -27,19 +25,7 @@ namespace BookTaxi.Services
                     Email= login.Email,
                     UserType = login.UserType
                 };
-            //}
-            //else
-            //{
-            //    var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
-            //    if (user == null)
-            //    {
-            //        throw new InvalidPasswordException("Invalid username or password");
-            //    }
-            //    return new LoginResponse
-            //    {
-            //        Email = login.Email,
-            //    };
-            //}
+            
         }
     }
 }

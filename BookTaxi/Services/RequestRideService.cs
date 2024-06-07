@@ -6,6 +6,7 @@ using BookTaxi.CustomExceptions;
 using System.ComponentModel.DataAnnotations;
 using System;
 using BookTaxi.IServices;
+using BookTaxi.Utlis;
 
 namespace BookTaxi.Services
 {
@@ -39,7 +40,7 @@ namespace BookTaxi.Services
                 VehicleId = vehicle.VehicleId,
                 PickUpLocation = rideDetails.PickupLocation,
                 DropLocation = rideDetails.DropLocation,
-                OTP = new Random().Next(1000, 9999).ToString(),
+                OTP = OTPGeneratorUtil.GenerateOTP(),
                 RideStatus = RideStatus.YetToStart
             };
             _context.Rides.Add(ride);

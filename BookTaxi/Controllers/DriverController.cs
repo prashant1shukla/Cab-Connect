@@ -43,8 +43,8 @@ namespace BookTaxi.Controllers
         [HttpPut("toggle-availability")]
         public IActionResult ToggleAvailibility()
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
            
             if (emailClaim == null || userTypeClaim == null)
             {
@@ -60,16 +60,19 @@ namespace BookTaxi.Controllers
         [HttpGet("get-driver-current-ride")]
         public IActionResult GetDriverCurrentRide()
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return BadRequest("User information not found in claims.");
+            }
+
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-                DriverCurrentRideResponse currentRideRespose = _currentRideService.GetDriverCurrentRide(emailClaim?.ToString(), userTypeClaim?.ToString());
+                
+                DriverCurrentRideResponse currentRideRespose = _currentRideService.GetDriverCurrentRide(emailClaim.ToString(), userTypeClaim.ToString());
                 return Ok(currentRideRespose);
             }
             catch (NoOngoingRideException ex)
@@ -82,16 +85,16 @@ namespace BookTaxi.Controllers
         [HttpPost("start-ride")]
         public IActionResult StartRide(StartRideRequest startRideDetails)
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return BadRequest("User information not found in claims.");
+            }
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-                _startRideService.StartRide(startRideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
+                _startRideService.StartRide(startRideDetails, emailClaim.ToString(), userTypeClaim.ToString());
                 return Ok("Ride Started");
             }
             catch (CanNotStartRideException ex)

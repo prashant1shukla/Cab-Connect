@@ -46,8 +46,8 @@ namespace BookTaxi.Controllers
         [HttpGet("get-user")]
         public IActionResult GetUser()
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
 
             // Check if email claim is present
             if (string.IsNullOrEmpty(emailClaim))
@@ -66,16 +66,19 @@ namespace BookTaxi.Controllers
         [HttpPost("request-a-ride")]
         public IActionResult RequestARide(RequestRideRequest rideDetails)
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return BadRequest("User information not found in claims.");
+            }
+
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-                RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim?.ToString(), userTypeClaim?.ToString());
+               
+                RequestRideResponse rideRespose = _requestRideService.RequestRide(rideDetails, emailClaim.ToString(), userTypeClaim.ToString());
                 return Ok(rideRespose);
             }
             catch (NoDriverFoundException ex)
@@ -88,16 +91,19 @@ namespace BookTaxi.Controllers
         [HttpGet("get-rider-current-ride")]
         public IActionResult GetCurrentRide()
         {
-            var emailClaim = UserUtils.GetUserEmailClaim(User);
-            var userTypeClaim = UserUtils.GetUserTypeClaim(User);
+            var emailClaim = UserClaimsUtil.GetUserEmailClaim(User);
+            var userTypeClaim = UserClaimsUtil.GetUserTypeClaim(User);
+
+            if (emailClaim == null || userTypeClaim == null)
+            {
+                // Handle the case where emailClaim or userTypeClaim is null
+                return BadRequest("User information not found in claims.");
+            }
+
             try
             {
-                if (emailClaim == null || userTypeClaim == null)
-                {
-                    // Handle the case where emailClaim or userTypeClaim is null
-                    return BadRequest("User information not found in claims.");
-                }
-                CurrentRideResponse currentRideRespose = _currentRideService.GetCurrentRide(emailClaim?.ToString(), userTypeClaim?.ToString());
+                
+                CurrentRideResponse currentRideRespose = _currentRideService.GetCurrentRide(emailClaim.ToString(), userTypeClaim.ToString());
                 return Ok(currentRideRespose);
             }
             catch (NoOngoingRideException ex)

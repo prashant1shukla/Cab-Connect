@@ -22,7 +22,6 @@ namespace BookTaxi.Models
         [Required]
         public VehicleAvailability VehicleAvailability { get; set; }
 
-        //Navigation property
         [ForeignKey("UserId")]
 
         public User User { get; set; }
