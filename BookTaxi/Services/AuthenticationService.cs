@@ -1,6 +1,7 @@
 ﻿using BookTaxi.CustomExceptions;
 using BookTaxi.Data;
 using BookTaxi.IServices;
+using BookTaxi.Models;
 using BookTaxi.ViewModels.RequestViewModels;
 using BookTaxi.ViewModels.ResponseViewModels;
 
@@ -15,7 +16,7 @@ namespace BookTaxi.Services
         }
         public LoginResponse AuthenticateUser(LoginRequest login)
         { 
-                var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
+                User? user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password);
                 if (user == null)
                 {
                     throw new InvalidPasswordException("Invalid username or password");

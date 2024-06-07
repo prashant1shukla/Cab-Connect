@@ -19,7 +19,7 @@ namespace BookTaxi.Services
         {
 
             // Create a new Driver entity from the ViewModel
-            var driver = new User
+            User driver = new User
             {
                 UserId = Guid.NewGuid(),
                 Name = driverDeatails.Name,
@@ -58,7 +58,7 @@ namespace BookTaxi.Services
             _context.SaveChanges();
 
             // Create and return a response ViewModel with the added Driver's details
-            var driverResponseViewModel = new DriverResponse
+            DriverResponse driverResponseViewModel = new DriverResponse
             {
                 UserId = driver.UserId,
                 Name = driver.Name,

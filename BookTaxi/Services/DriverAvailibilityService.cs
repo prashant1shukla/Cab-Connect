@@ -2,6 +2,7 @@
 using BookTaxi.Data;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
+using BookTaxi.Models;
 using BookTaxi.Models.Response;
 using BookTaxi.ViewModels.ResponseViewModels;
 
@@ -17,7 +18,7 @@ namespace BookTaxi.Services
         }
         public void UpdateVehcileToInRide(Guid vehicleId)
         {
-            var vehicle = _context.Vehicles.FirstOrDefault(v=>v.VehicleId == vehicleId);
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v=>v.VehicleId == vehicleId);
             if (vehicle == null)
             {
                 throw new NoDriverFoundException();
@@ -26,7 +27,11 @@ namespace BookTaxi.Services
         }
         public DriverAvailabiltyResponse ToggleAvailibility(string email)
         {
-            var vehicle = _context.Vehicles.FirstOrDefault(v => v.User.Email == email);
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.User.Email == email);
+            if (vehicle == null)
+            {
+                throw new NoOngoingRideException();
+            }
             if (vehicle.VehicleAvailability == VehicleAvailability.RideInProgress)
             {
                 throw new DriverInRideExcpetion();
@@ -41,7 +46,7 @@ namespace BookTaxi.Services
             }
             _context.SaveChanges();
 
-            var driverAvailibilityResponse = new DriverAvailabiltyResponse
+            DriverAvailabiltyResponse driverAvailibilityResponse = new DriverAvailabiltyResponse
             {
                 VehicleAvailabilty=vehicle.VehicleAvailability.ToString()
             };

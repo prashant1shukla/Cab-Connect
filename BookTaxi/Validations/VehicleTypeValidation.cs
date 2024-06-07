@@ -12,7 +12,6 @@ namespace BookTaxi.Validations
             {
                 return new ValidationResult("Vehicle must be 'Bike' or 'Car' or 'Auto");
             }
-
             return ValidationResult.Success;
         }
     }

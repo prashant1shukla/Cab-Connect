@@ -2,6 +2,7 @@
 using BookTaxi.Data;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
+using BookTaxi.Models;
 using BookTaxi.Models.Request;
 
 namespace BookTaxi.Services
@@ -16,23 +17,23 @@ namespace BookTaxi.Services
 
         public void CancleRide(EndRideRequest cancleRideDetails, string email)
         {
-            var rideInProgess = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.InProgress);
+            Ride? rideInProgess = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.InProgress);
             if (rideInProgess != null)
             {
                 throw new RideAlreadyStartedException();
             }
-            var ride = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.YetToStart);
+            Ride? ride = _context.Rides.FirstOrDefault(r => r.RideId == cancleRideDetails.RideId && r.RideStatus == RideStatus.YetToStart);
             if (ride == null)
             {
                 throw new RideNotFoundException();
             }
-            var vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleId == ride.VehicleId);
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleId == ride.VehicleId);
             if (vehicle == null)
             {
                 throw new RideNotFoundException();
             }
-            var rider = _context.Users.FirstOrDefault(u => u.UserId == ride.UserId);
-            var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
+            User? rider = _context.Users.FirstOrDefault(u => u.UserId == ride.UserId);
+            User? driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
             if (!(rider.Email == email || driver.Email == email))
             {
                 throw new RideNotFoundException();

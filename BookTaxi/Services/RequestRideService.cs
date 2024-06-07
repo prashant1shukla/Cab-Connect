@@ -24,17 +24,25 @@ namespace BookTaxi.Services
         public RequestRideResponse RequestRide(RequestRideRequest rideDetails, string? email, string? userType)
         {
             //checking driver's availability
-            var vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleAvailability == VehicleAvailability.Available && v.VehicleType == (VehicleType)Enum.Parse(typeof(VehicleType), rideDetails.TypeOfRide) && v.User.Email!=email);
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleAvailability == VehicleAvailability.Available && v.VehicleType == (VehicleType)Enum.Parse(typeof(VehicleType), rideDetails.TypeOfRide) && v.User.Email!=email);
             if (vehicle == null)
             {
                 throw new NoDriverFoundException();
             }
-            var rider = _context.Users.FirstOrDefault(u=>u.Email == email && u.UserRole == UserRole.Rider);
-            var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId && u.UserRole == UserRole.Driver);
+            User? rider = _context.Users.FirstOrDefault(u=>u.Email == email && u.UserRole == UserRole.Rider);
+            if (rider == null)
+            {
+                throw new NoDriverFoundException();
+            }
+            User? driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId && u.UserRole == UserRole.Driver);
+            if (driver == null)
+            {
+                throw new NoDriverFoundException();
+            }
 
             _driverAvailability.UpdateVehcileToInRide(vehicle.VehicleId);
 
-            var ride = new Ride
+            Ride ride = new Ride
             {
                 RideId = Guid.NewGuid(),
                 UserId = rider.UserId,
@@ -47,7 +55,7 @@ namespace BookTaxi.Services
             _context.Rides.Add(ride);
             _context.SaveChanges();
 
-            var requestRideResponse = new RequestRideResponse
+            RequestRideResponse requestRideResponse = new RequestRideResponse
             {
                 RideId = ride.RideId,
                 DriverName = driver.Name,

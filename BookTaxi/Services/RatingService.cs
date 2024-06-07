@@ -24,7 +24,7 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-            var ride=_context.Rides.FirstOrDefault(r=>r.RideId == ratingRequest.RideId);
+            Ride? ride=_context.Rides.FirstOrDefault(r=>r.RideId == ratingRequest.RideId);
             if (ride == null)
             {
                 throw new RideNotFoundException();
@@ -35,7 +35,7 @@ namespace BookTaxi.Services
             }
             if(userRole==UserRole.Rider)
             {
-                var rider= _context.Users.FirstOrDefault(u=>u.Email== email);
+                User? rider= _context.Users.FirstOrDefault(u=>u.Email== email);
                 if (rider == null)
                 {
                     throw new RideNotFoundException();
@@ -47,19 +47,19 @@ namespace BookTaxi.Services
             }
             else
             {
-                var vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleId == ride.VehicleId);
+                Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.VehicleId == ride.VehicleId);
                 if (vehicle == null)
                 {
                     throw new RideNotFoundException();
                 }
-                var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
+                User? driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
                 if (driver.Email != email)
                 {
                     throw new RideNotFoundException();
                 }
             }
 
-            var ratings = new Rating
+            Rating ratings = new Rating
             {
                 RatingId = Guid.NewGuid(),
                 RideId = ratingRequest.RideId,

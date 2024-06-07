@@ -2,6 +2,7 @@
 using BookTaxi.Data;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
+using BookTaxi.Models;
 using BookTaxi.Models.Request;
 
 namespace BookTaxi.Services
@@ -22,16 +23,26 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-            var ride = _context.Rides.FirstOrDefault(r =>r.RideId==startRideDetails.RideId && r.OTP==startRideDetails.OTP && r.RideStatus==RideStatus.YetToStart);
-            
-            var driver = _context.Users.FirstOrDefault(v => v.Email == email && v.UserRole == userRole);
-            var vehicle = _context.Vehicles.FirstOrDefault(v => v.UserId == driver.UserId);
-            if (ride == null || driver==null || vehicle==null || vehicle.VehicleId!=ride.VehicleId)
+            Ride? ride = _context.Rides.FirstOrDefault(r =>r.RideId==startRideDetails.RideId && r.OTP==startRideDetails.OTP && r.RideStatus==RideStatus.YetToStart);
+            if (ride == null)
+            {
+                throw new CanNotStartRideException();
+            }
+            User? driver = _context.Users.FirstOrDefault(v => v.Email == email && v.UserRole == userRole);
+            if (driver == null)
+            {
+                throw new CanNotStartRideException();
+            }
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v => v.UserId == driver.UserId);
+            if (vehicle==null || vehicle.VehicleId!=ride.VehicleId)
             {
                 throw new CanNotStartRideException();
             }
             ride.RideStatus = RideStatus.InProgress;
-            _context.SaveChanges();
+            _context.SaveChanges();if (driver == null)
+            {
+                throw new CanNotStartRideException();
+            }
 
         }
     }

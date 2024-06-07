@@ -3,6 +3,7 @@ using BookTaxi.CustomExceptions;
 using BookTaxi.Enums;
 using BookTaxi.IServices;
 using BookTaxi.Data;
+using BookTaxi.Models;
 
 
 namespace BookTaxi.Services
@@ -24,9 +25,21 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-            var ride = _context.Rides.FirstOrDefault(r => r.User.Email == email && r.User.UserRole == userRole);
-            var vehicle = _context.Vehicles.FirstOrDefault(v=>v.VehicleId==ride.VehicleId);
-            var driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
+            Ride? ride = _context.Rides.FirstOrDefault(r => r.User.Email == email && r.User.UserRole == userRole);
+            if (ride == null)
+            {
+                throw new NoOngoingRideException();
+            }
+            Vehicle? vehicle = _context.Vehicles.FirstOrDefault(v=>v.VehicleId==ride.VehicleId);
+            if (vehicle == null)
+            {
+                throw new NoOngoingRideException();
+            }
+            User? driver = _context.Users.FirstOrDefault(u => u.UserId == vehicle.UserId);
+            if (driver == null)
+            {
+                throw new NoOngoingRideException();
+            }
 
             if (ride == null)
             {
@@ -66,12 +79,16 @@ namespace BookTaxi.Services
                 throw new ArgumentException("Invalid user type.", nameof(userType));
             }
 
-            var ride = _context.Rides.FirstOrDefault(r => r.Vehicle.User.Email == email && r.Vehicle.User.UserRole==userRole && r.Vehicle.VehicleAvailability==VehicleAvailability.RideInProgress);
+            Ride? ride = _context.Rides.FirstOrDefault(r => r.Vehicle.User.Email == email && r.Vehicle.User.UserRole==userRole && r.Vehicle.VehicleAvailability==VehicleAvailability.RideInProgress);
             if (ride == null)
             {
                 throw new NoOngoingRideException();
             }
-            var rider = _context.Users.FirstOrDefault(v => v.UserId == ride.UserId);
+            User? rider = _context.Users.FirstOrDefault(v => v.UserId == ride.UserId);
+            if (rider == null)
+            {
+                throw new NoOngoingRideException();
+            }
 
             return new DriverCurrentRideResponse
             {
