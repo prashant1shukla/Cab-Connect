@@ -1,0 +1,287 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\services\\createsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:services\\createsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\services\\deletesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:services\\deletesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\services\\getsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:services\\getsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\services\\purgesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:services\\purgesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|c:\\users\\admin\\documents\\azure\\keyvault\\controllers\\keyvaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:controllers\\keyvaultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\customexception\\failedtocreatesecretexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:customexception\\failedtocreatesecretexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\customexception\\invalidsecretexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:customexception\\invalidsecretexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\iservices\\ipurgesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:iservices\\ipurgesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\models\\request\\secretsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:models\\request\\secretsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\middleware\\globalexceptionhandlermiddleware .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:middleware\\globalexceptionhandlermiddleware .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\iservices\\icreatesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:iservices\\icreatesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\iservices\\ideletesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:iservices\\ideletesecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\iservices\\igetsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:iservices\\igetsecretservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\keyvault.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{024A3DFE-A062-4DF5-A2E1-8564012DB63E}|KeyVault.csproj|solutionrelative:keyvault.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvalidSecretException.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\CustomException\\InvalidSecretException.cs",
+              "RelativeDocumentMoniker": "CustomException\\InvalidSecretException.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\CustomException\\InvalidSecretException.cs",
+              "RelativeToolTip": "CustomException\\InvalidSecretException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:57:08.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GlobalExceptionHandlerMiddleware .cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Middleware\\GlobalExceptionHandlerMiddleware .cs",
+              "RelativeDocumentMoniker": "Middleware\\GlobalExceptionHandlerMiddleware .cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Middleware\\GlobalExceptionHandlerMiddleware .cs",
+              "RelativeToolTip": "Middleware\\GlobalExceptionHandlerMiddleware .cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:45:09.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FailedToCreateSecretException.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\CustomException\\FailedToCreateSecretException.cs",
+              "RelativeDocumentMoniker": "CustomException\\FailedToCreateSecretException.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\CustomException\\FailedToCreateSecretException.cs",
+              "RelativeToolTip": "CustomException\\FailedToCreateSecretException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:27:13.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PurgeSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\PurgeSecretService.cs",
+              "RelativeDocumentMoniker": "Services\\PurgeSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\PurgeSecretService.cs",
+              "RelativeToolTip": "Services\\PurgeSecretService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:50:15.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeleteSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\DeleteSecretService.cs",
+              "RelativeDocumentMoniker": "Services\\DeleteSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\DeleteSecretService.cs",
+              "RelativeToolTip": "Services\\DeleteSecretService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:49:53.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\GetSecretService.cs",
+              "RelativeDocumentMoniker": "Services\\GetSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\GetSecretService.cs",
+              "RelativeToolTip": "Services\\GetSecretService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwA4AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:49:31.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\CreateSecretService.cs",
+              "RelativeDocumentMoniker": "Services\\CreateSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Services\\CreateSecretService.cs",
+              "RelativeToolTip": "Services\\CreateSecretService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:49:02.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICreateSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\ICreateSecretService.cs",
+              "RelativeDocumentMoniker": "IServices\\ICreateSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\ICreateSecretService.cs",
+              "RelativeToolTip": "IServices\\ICreateSecretService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:48:30.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IGetSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IGetSecretService.cs",
+              "RelativeDocumentMoniker": "IServices\\IGetSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IGetSecretService.cs",
+              "RelativeToolTip": "IServices\\IGetSecretService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:48:04.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IDeleteSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IDeleteSecretService.cs",
+              "RelativeDocumentMoniker": "IServices\\IDeleteSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IDeleteSecretService.cs",
+              "RelativeToolTip": "IServices\\IDeleteSecretService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:47:42.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPurgeSecretService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IPurgeSecretService.cs",
+              "RelativeDocumentMoniker": "IServices\\IPurgeSecretService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\IServices\\IPurgeSecretService.cs",
+              "RelativeToolTip": "IServices\\IPurgeSecretService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:47:18.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecretsRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Models\\Request\\SecretsRequest.cs",
+              "RelativeDocumentMoniker": "Models\\Request\\SecretsRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Models\\Request\\SecretsRequest.cs",
+              "RelativeToolTip": "Models\\Request\\SecretsRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:39:40.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "KeyVault",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\KeyVault.csproj",
+              "RelativeDocumentMoniker": "KeyVault.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\KeyVault.csproj",
+              "RelativeToolTip": "KeyVault.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T06:39:46.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KeyVaultController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Controllers\\KeyVaultController.cs",
+              "RelativeDocumentMoniker": "Controllers\\KeyVaultController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Controllers\\KeyVaultController.cs",
+              "RelativeToolTip": "Controllers\\KeyVaultController.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAowA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T06:25:32.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-11T05:46:48.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Azure\\KeyVault\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCgAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:39:09.08Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
