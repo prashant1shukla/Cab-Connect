@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3AE9F9E-E874-4542-AB21-08997C8D0F1F}|SendEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\sendevents\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3AE9F9E-E874-4542-AB21-08997C8D0F1F}|SendEvents.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3AE9F9E-E874-4542-AB21-08997C8D0F1F}|SendEvents.csproj|C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\sendevents.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F3AE9F9E-E874-4542-AB21-08997C8D0F1F}|SendEvents.csproj|solutionrelative:sendevents.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SendEvents.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\SendEvents.csproj",
+              "RelativeDocumentMoniker": "SendEvents.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\SendEvents.csproj",
+              "RelativeToolTip": "SendEvents.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-10T11:04:28.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\SendEvents\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T10:54:36.008Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
