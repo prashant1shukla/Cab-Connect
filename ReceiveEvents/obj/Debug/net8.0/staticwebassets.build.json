@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "2JBZiw1YDNfFvRw1pkO+VmrbGugertOtjNFzwFKIY0o=",
+  "Source": "ReceiveEvents",
+  "BasePath": "_content/ReceiveEvents",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

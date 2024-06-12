@@ -1,58 +1,52 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-using Azure.Storage.Blobs;
-using Azure.Messaging.EventHubs;
-using Azure.Messaging.EventHubs.Consumer;
-using Azure.Messaging.EventHubs.Processor;
+using ReceiveEvents.Controllers;
+using ReceiveEvents.IServices;
+using ReceiveEvents.Middleware;
+using ReceiveEvents.Services;
 
 namespace ReceiveEvents
 {
-    internal class Program
+    public class Program
     {
-        private const string connectionString = "";
-        private const string eventHubName = "";
-        private const string blobStorageConnectionString = "";
-        private const string blobContainerName = "";
-
-        static async Task Main()
+        public static void Main(string[] args)
         {
-            string consumerGroup = EventHubConsumerClient.DefaultConsumerGroupName;
+            var builder = WebApplication.CreateBuilder(args);
 
-            // Create a blob container client that the event processor will use 
-            BlobContainerClient storageClient = new BlobContainerClient(blobStorageConnectionString, blobContainerName);
+            // Add services to the container.
+            builder.Services.AddSingleton<IEventProcessingService, EventProcessingService>();
+            builder.Services.AddScoped<IEventSendingService, EventSendingService>();
 
-            // Create an event processor client to process events in the event hub
-            EventProcessorClient processor = new EventProcessorClient(storageClient, consumerGroup, connectionString, eventHubName);
+            builder.Services.AddScoped<GlobalExceptionHandlerMiddleware>();
 
-            // Register handlers for processing events and handling errors
-            processor.ProcessEventAsync += ProcessEventHandler;
-            processor.ProcessErrorAsync += ProcessErrorHandler;
+            // Load secrets from Azure Key Vault
+            var keyVaultUri = new Uri(builder.Configuration["VaultName"]);
+            var keyVaultService = new KeyVaultService(keyVaultUri);
+            var secretConfigurations = keyVaultService.GetSecretConfigurationsAsync().GetAwaiter().GetResult();
 
-            // Start the processing
-            await processor.StartProcessingAsync();
+            builder.Services.AddSingleton(secretConfigurations);
 
-            // Wait for 10 seconds for the events to be processed
-            await Task.Delay(TimeSpan.FromSeconds(10));
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
-            // Stop the processing
-            await processor.StopProcessingAsync();
-        }
-        static async Task ProcessEventHandler(ProcessEventArgs eventArgs)
-        {
-            // Write the body of the event to the console window
-            Console.WriteLine("\tRecevied event: {0}", Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray()));
+            var app = builder.Build();
 
-            // Update checkpoint in the blob storage so that the app receives only new events the next time it's run
-            await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
-        }
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
-        static Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
-        {
-            // Write details about the error to the console window
-            Console.WriteLine($"\tPartition '{eventArgs.PartitionId}': an unhandled exception was encountered. This was not expected to happen.");
-            Console.WriteLine(eventArgs.Exception.Message);
-            return Task.CompletedTask;
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+            app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
+            app.MapControllers();
+
+            app.Run();
         }
     }
 }

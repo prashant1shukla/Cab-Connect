@@ -1,10 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEvents\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3F59C4D-9A75-4642-AF40-606A2ACBECDA}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveevents\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3F59C4D-9A75-4642-AF40-606A2ACBECDA}|ReceiveEvents.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\services\\keyvaultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:services\\keyvaultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\services\\eventsendingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:services\\eventsendingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\services\\eventprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:services\\eventprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\iservices\\ikeyvaultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:iservices\\ikeyvaultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\iservices\\ieventsendingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:iservices\\ieventsendingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\iservices\\ieventprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:iservices\\ieventprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\customexceptions\\invalidrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:customexceptions\\invalidrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\controllers\\receiveeventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:controllers\\receiveeventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\controllers\\sendeventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:controllers\\sendeventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\configuration\\secretsconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:configuration\\secretsconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\receiveevents.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:receiveevents.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|c:\\users\\admin\\documents\\kdu-azure\\kdu3-dotnet\\receiveeventsapp\\receiveevents\\middleware\\globalexceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB175897-31D0-4D78-AFD7-39F509C42619}|ReceiveEvents.csproj|solutionrelative:middleware\\globalexceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +66,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EventProcessingService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\EventProcessingService.cs",
+              "RelativeDocumentMoniker": "Services\\EventProcessingService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\EventProcessingService.cs",
+              "RelativeToolTip": "Services\\EventProcessingService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwBEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:15:37.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventSendingService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\EventSendingService.cs",
+              "RelativeDocumentMoniker": "Services\\EventSendingService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\EventSendingService.cs",
+              "RelativeToolTip": "Services\\EventSendingService.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAuwA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:42:13.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KeyVaultService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\KeyVaultService.cs",
+              "RelativeDocumentMoniker": "Services\\KeyVaultService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Services\\KeyVaultService.cs",
+              "RelativeToolTip": "Services\\KeyVaultService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T09:10:45.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-12T06:19:09.637Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEvents\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEvents\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwDkAAAABAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAqwBgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T11:33:13.379Z",
+              "WhenOpened": "2024-06-12T09:49:48.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IKeyVaultService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IKeyVaultService.cs",
+              "RelativeDocumentMoniker": "IServices\\IKeyVaultService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IKeyVaultService.cs",
+              "RelativeToolTip": "IServices\\IKeyVaultService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T08:47:15.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IEventSendingService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IEventSendingService.cs",
+              "RelativeDocumentMoniker": "IServices\\IEventSendingService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IEventSendingService.cs",
+              "RelativeToolTip": "IServices\\IEventSendingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:41:39.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IEventProcessingService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IEventProcessingService.cs",
+              "RelativeDocumentMoniker": "IServices\\IEventProcessingService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\IServices\\IEventProcessingService.cs",
+              "RelativeToolTip": "IServices\\IEventProcessingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:15:10.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvalidRequestException.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\CustomExceptions\\InvalidRequestException.cs",
+              "RelativeDocumentMoniker": "CustomExceptions\\InvalidRequestException.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\CustomExceptions\\InvalidRequestException.cs",
+              "RelativeToolTip": "CustomExceptions\\InvalidRequestException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T07:05:18.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReceiveEventsController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Controllers\\ReceiveEventsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReceiveEventsController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Controllers\\ReceiveEventsController.cs",
+              "RelativeToolTip": "Controllers\\ReceiveEventsController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T13:25:38.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SendEventsController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Controllers\\SendEventsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SendEventsController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Controllers\\SendEventsController.cs",
+              "RelativeToolTip": "Controllers\\SendEventsController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:43:42.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SecretsConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Configuration\\SecretsConfiguration.cs",
+              "RelativeDocumentMoniker": "Configuration\\SecretsConfiguration.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Configuration\\SecretsConfiguration.cs",
+              "RelativeToolTip": "Configuration\\SecretsConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T09:03:56.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReceiveEvents.http",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\ReceiveEvents.http",
+              "RelativeDocumentMoniker": "ReceiveEvents.http",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\ReceiveEvents.http",
+              "RelativeToolTip": "ReceiveEvents.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-06-12T08:52:49.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GlobalExceptionHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\kdu-azure\\kdu3-dotnet\\ReceiveEventsApp\\ReceiveEvents\\Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "RelativeToolTip": "Middleware\\GlobalExceptionHandlerMiddleware.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:57:52.862Z",
               "EditorCaption": ""
             }
           ]
